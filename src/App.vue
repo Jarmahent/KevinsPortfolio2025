@@ -2,7 +2,7 @@
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue'
-import Experience from './components/main/Experience.vue';
+import Experience from './components/sections/Experience.vue';
 </script>
 
 <template>
@@ -66,21 +66,3 @@ import Experience from './components/main/Experience.vue';
     </main>
   </div>
 </template>
-
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

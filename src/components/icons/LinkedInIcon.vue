@@ -8,7 +8,7 @@
     </a>
 </template>
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue'
+import { defineProps } from 'vue'
 
 // Define props
 const props = defineProps({
