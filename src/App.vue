@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import MainPortfolio from './components/MainPortfolio.vue'
-import SideBar from './components/SideBar.vue';
-</script>
-
 <template>
   <div class="flex h-screen">
     <!-- Side Panel -->
