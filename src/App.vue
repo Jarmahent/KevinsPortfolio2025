@@ -12,7 +12,7 @@ import { ref } from 'vue';
 let showingContactMe = ref(false);
 
 
-function scrollTo(id) {
+function scrollTo(id: string) {
   const el = document.getElementById(id)
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' })
