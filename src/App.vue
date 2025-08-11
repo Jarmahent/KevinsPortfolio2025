@@ -24,11 +24,12 @@ function scrollTo(id: string) {
 <template>
 
 
-  <ContactMe v-if="showingContactMe" @close="showingContactMe = false;"/>
+  <ContactMe v-if="showingContactMe" @close="showingContactMe = false;" />
 
   <div class="flex">
     <!-- Side Panel -->
-    <aside class="w-64 bg-gray-900 text-white flex flex-col fixed top-0 left-0 h-screen p-4">
+    <aside
+      class="hidden md:flex md:flex-col md:fixed md:top-0 md:left-0 md:h-screen md:w-64 bg-gray-900 text-white p-4">
       <div class="flex justify-center m-4">
         <img src="./assets/me.png" alt="kevin hernandez" class="w-30 h-30 rounded-full object-cover">
       </div>
@@ -50,17 +51,19 @@ function scrollTo(id: string) {
 
 
       <div class="flex flex-col flex-grow-[2]">
-        <button  @click="scrollTo('about-me')" class="mb-2 hover:bg-gray-600 flex items-center border-b gap-2 px-3 py-1 ">
+        <button @click="scrollTo('about-me')"
+          class="mb-2 hover:bg-gray-600 flex items-center border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold  flex items-center">+</span>
           About Me
         </button>
 
-        <button  @click="scrollTo('skills')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
+        <button @click="scrollTo('skills')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold flex items-center">+</span>
           Skills & Technologies
         </button>
 
-        <button  @click="scrollTo('experience')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
+        <button @click="scrollTo('experience')"
+          class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold flex items-center">+</span>
           Experience
         </button>
@@ -72,8 +75,7 @@ function scrollTo(id: string) {
       </div>
 
 
-      <button
-        @click="showingContactMe = true"
+      <button @click="showingContactMe = true"
         class="rounded shadow animate-bounce transition duration-150 border border-white text-white bg-transparent px-4 py-2 text-center font-medium inline-block">
         Contact me!
       </button>
@@ -94,10 +96,30 @@ function scrollTo(id: string) {
     </aside>
 
     <!-- Main Content -->
-    <main class="ml-64 flex-1 p-6 bg-gray-100">
-      <AboutMe id="about-me"/>
+    <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100">
+      <AboutMe id="about-me" />
       <Skills id="skills" />
       <Experience id="experience" />
+
+
+      <footer class="fixed bottom-0 left-0 w-full bg-gray-100 flex md:hidden h-[60px] items-center shadow z-50">
+        <div class="flex ml-2">
+          <LinkedInIcon size="40px" class="p-1 ml-3" color="black" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
+          <StackOverFlowIcon size="40px" class="p-1 ml-3 " color="black" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
+          <GithubIcon size="40px" class="p-1 ml-3" color="black" link="https://github.com/Jarmahent" />
+        </div>
+        <div class="flex-1"></div>
+        <button
+          @click="showingContactMe = true"
+          class="mr-4 rounded shadow animate-bounce transition duration-150 border bg-black border-black text-white px-4 py-2 text-center font-medium md:hidden"
+        >
+          Contact me!
+        </button>
+      </footer>
+
+
+
+
     </main>
   </div>
 </template>
