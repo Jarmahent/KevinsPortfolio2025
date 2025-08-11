@@ -1,26 +1,50 @@
 <template>
   <div class="flex h-screen">
     <!-- Side Panel -->
-    <aside class="w-64 bg-gray-800 text-white flex flex-col p-4">
-      <h2 class="text-lg font-semibold mb-6">Menu</h2>
+    <aside class="w-64 bg-gray-900 text-white flex flex-col h-screen p-4">
+      <div class="flex justify-center m-4">
+        <img src="./assets/me.png" alt="kevin hernandez"
+          class="w-30 h-30 rounded-full object-cover">
+      </div>
+      <div class="m-4 flex-grow-[.8]">
+        <div>
+        <h2 class="text-2xl font-extrabold text-white-900 tracking-tight"> Kevin Hernandez</h2>
 
-      <button
-        class="mb-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition"
-      >
-        Dashboard
-      </button>
+        </div>
+        <div >
+        <p class="text-sm  tracking-tight">Fullstack Developer</p>
 
-      <button
-        class="mb-2 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded transition"
-      >
-        Settings
-      </button>
+        </div>
+        <div >
+        <p class="text-sm  tracking-tight">Northern Virginia</p>
 
-      <button
-        class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition"
-      >
-        Logout
-      </button>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col flex-grow-[2]">
+        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+          <span class="text-2xl font-bold  flex items-center">+</span>
+          What I do
+        </button>
+
+        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+          <span class="text-2xl font-bold flex items-center">+</span>
+          Experience
+        </button>
+
+        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+          <span class="text-2xl font-bold  flex items-center">+</span>
+          Projects
+        </button>
+      </div>
+      <footer>
+        
+        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+          Built with ❤ By Kevin
+        </button>
+      </footer>
+
     </aside>
 
     <!-- Main Content -->
@@ -39,9 +63,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
