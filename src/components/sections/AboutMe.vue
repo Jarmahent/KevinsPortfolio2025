@@ -1,12 +1,14 @@
 <template>
-
+    <div>
+        
     <h1 class="text-5xl font-extrabold text-white-900 tracking-tight"> About Me</h1>
     <hr class="border-t-2 border-gray-300 my-4" />
 
     <div class="justify-center mt-9 flex-col">
         <div class="flex">
             <div class="w-3/3 p-4">
-                <h1 class="text-5xl font-extrabold text-white-900 tracking-tight m-2  border-l-8 border-black pl-2">Kevin Hernandez</h1>
+                <h1 class="text-5xl font-extrabold text-white-900 tracking-tight m-2  border-l-8 border-black pl-2">
+                    Kevin Hernandez</h1>
                 <h2 class="text-2xl font-extrabold text-white-900 tracking-tight m-2">Fullstack Developer</h2>
                 <p class="font-mono font-extrabold text-sm">
                     I am a fullstack developer with a strong foundation in Python, particularly using FastAPI and
@@ -29,9 +31,11 @@
 
     </div>
 
-    <a href="./khr2025.pdf" rel="noopener noreferrer" target="_blank" class="ml-5 border border-black text-black bg-transparent px-4 py-2 text-center font-medium inline-block">
-    Resume PDF
+    <a href="./khr2025.pdf" rel="noopener noreferrer" target="_blank"
+        class="ml-5 border border-black text-black bg-transparent px-4 py-2 text-center font-medium inline-block">
+        Resume PDF
     </a>
+    </div>
 
 
 

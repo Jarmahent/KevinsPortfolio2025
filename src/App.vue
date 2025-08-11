@@ -5,9 +5,27 @@ import GithubIcon from './components/icons/GithubIcon.vue'
 import Experience from './components/sections/Experience.vue';
 import Skills from './components/sections/Skills.vue';
 import AboutMe from './components/sections/AboutMe.vue';
+import ContactMe from './components/ContactMe.vue';
+import { ref } from 'vue';
+
+
+let showingContactMe = ref(false);
+
+
+function scrollTo(id) {
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 </script>
 
 <template>
+
+
+  <ContactMe v-if="showingContactMe" @close="showingContactMe = false;"/>
+
   <div class="flex">
     <!-- Side Panel -->
     <aside class="w-64 bg-gray-900 text-white flex flex-col fixed top-0 left-0 h-screen p-4">
@@ -16,7 +34,8 @@ import AboutMe from './components/sections/AboutMe.vue';
       </div>
       <div class="m-4 flex-grow-[.8]">
         <div>
-          <h2 class="text-2xl font-extrabold text-white-00 tracking-tight border-l-4 border-white pl-3"> Kevin Hernandez</h2>
+          <h2 class="text-2xl font-extrabold text-white-00 tracking-tight border-l-4 border-white pl-3"> Kevin Hernandez
+          </h2>
 
         </div>
         <div class="mt-2 font-bold">
@@ -31,26 +50,31 @@ import AboutMe from './components/sections/AboutMe.vue';
 
 
       <div class="flex flex-col flex-grow-[2]">
-        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+        <button  @click="scrollTo('about-me')" class="mb-2 hover:bg-gray-600 flex items-center border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold  flex items-center">+</span>
-          What I do
+          About Me
         </button>
 
-        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+        <button  @click="scrollTo('skills')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
+          <span class="text-2xl font-bold flex items-center">+</span>
+          Skills & Technologies
+        </button>
+
+        <button  @click="scrollTo('experience')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold flex items-center">+</span>
           Experience
         </button>
 
-        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
+        <!-- <button class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold  flex items-center">+</span>
           Projects
-        </button>
+        </button> -->
       </div>
 
-      
+
       <button
-        class=" rounded shadow animate-bounce transition duration-150 border border-white text-white bg-transparent px-4 py-2 text-center font-medium inline-block"
-      >
+        @click="showingContactMe = true"
+        class="rounded shadow animate-bounce transition duration-150 border border-white text-white bg-transparent px-4 py-2 text-center font-medium inline-block">
         Contact me!
       </button>
 
@@ -71,9 +95,9 @@ import AboutMe from './components/sections/AboutMe.vue';
 
     <!-- Main Content -->
     <main class="ml-64 flex-1 p-6 bg-gray-100">
-      <AboutMe/>
-      <Skills/>
-      <Experience/>
+      <AboutMe id="about-me"/>
+      <Skills id="skills" />
+      <Experience id="experience" />
     </main>
   </div>
 </template>
