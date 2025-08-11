@@ -2,6 +2,7 @@
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue'
+import Experience from './components/main/Experience.vue';
 </script>
 
 <template>
@@ -61,8 +62,7 @@ import GithubIcon from './components/icons/GithubIcon.vue'
 
     <!-- Main Content -->
     <main class="flex-1 p-6 bg-gray-100">
-      <h1 class="text-2xl font-bold mb-4">Main Content Area</h1>
-      <p>This is where your portfolio content will go.</p>
+      <Experience/>
     </main>
   </div>
 </template>
