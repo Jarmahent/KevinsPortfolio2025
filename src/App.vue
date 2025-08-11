@@ -3,26 +3,28 @@ import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue'
 import Experience from './components/sections/Experience.vue';
+import Skills from './components/sections/Skills.vue';
+import AboutMe from './components/sections/AboutMe.vue';
 </script>
 
 <template>
-  <div class="flex h-screen">
+  <div class="flex">
     <!-- Side Panel -->
-    <aside class="w-64 bg-gray-900 text-white flex flex-col h-screen p-4">
+    <aside class="w-64 bg-gray-900 text-white flex flex-col fixed top-0 left-0 h-screen p-4">
       <div class="flex justify-center m-4">
         <img src="./assets/me.png" alt="kevin hernandez" class="w-30 h-30 rounded-full object-cover">
       </div>
       <div class="m-4 flex-grow-[.8]">
         <div>
-          <h2 class="text-2xl font-extrabold text-white-900 tracking-tight"> Kevin Hernandez</h2>
+          <h2 class="text-2xl font-extrabold text-white-00 tracking-tight border-l-4 border-white pl-3"> Kevin Hernandez</h2>
 
         </div>
-        <div>
-          <p class="text-sm  tracking-tight">Fullstack Developer</p>
+        <div class="mt-2 font-bold">
+          <p class="text-md  tracking-tight">Fullstack Developer</p>
 
         </div>
-        <div>
-          <p class="text-sm  tracking-tight">Northern Virginia</p>
+        <div class="mt-2 font-bold text">
+          <p class="text-md  tracking-tight">Northern Virginia</p>
 
         </div>
       </div>
@@ -45,6 +47,13 @@ import Experience from './components/sections/Experience.vue';
         </button>
       </div>
 
+      
+      <button
+        class=" rounded shadow animate-bounce transition duration-150 border border-white text-white bg-transparent px-4 py-2 text-center font-medium inline-block"
+      >
+        Contact me!
+      </button>
+
       <footer class="p-1 flex flex-row">
         <LinkedInIcon class="p-1" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
         <StackOverFlowIcon class="p-1" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
@@ -61,7 +70,9 @@ import Experience from './components/sections/Experience.vue';
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 p-6 bg-gray-100">
+    <main class="ml-64 flex-1 p-6 bg-gray-100">
+      <AboutMe/>
+      <Skills/>
       <Experience/>
     </main>
   </div>
