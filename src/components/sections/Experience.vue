@@ -13,7 +13,7 @@
                     </span>
                     <h3 class="font-semibold text-2xl text-gray-900"><a class="inline-flex space-x-1"
                             href="https://www.risingtide.us/" target="_blank">
-                            <span>RisingTide Analytics</span>
+                            <span>RisingTide</span>
                             <NewTabIcon class="w-4 h-4" />
                         </a></h3>
                     <time class="block mb-2 text-md font-normal leading-none text-gray-400">Apr 2024 - Aug 2025</time>
@@ -73,7 +73,7 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 import NewTabIcon from '../icons/NewTabIcon.vue';
 
 </script>

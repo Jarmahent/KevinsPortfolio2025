@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue'

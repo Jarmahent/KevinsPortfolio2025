@@ -7,11 +7,11 @@
         </svg>
     </a>
 </template>
-<script setup>
+<script setup lang="ts">
 import { defineProps } from 'vue'
 
 // Define props
-const props = defineProps({
+defineProps({
   link: {
     type: String
   },
