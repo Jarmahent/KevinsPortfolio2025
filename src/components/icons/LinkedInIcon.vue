@@ -8,7 +8,6 @@
     </a>
 </template>
 <script setup lang="ts">
-import { defineProps } from 'vue'
 
 // Define props
 defineProps({
