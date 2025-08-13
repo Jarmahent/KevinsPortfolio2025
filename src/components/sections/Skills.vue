@@ -4,7 +4,7 @@
             <h1 class="text-5xl font-extrabold text-white-900 tracking-tight"> Skills & Technologies</h1>
             <hr class="border-t-2 border-gray-300 my-4" />
         </div>
-        <div class="w-full h-full grid grid-cols-4 grid-rows-2 gap-1">
+        <div class="w-full h-full grid grid-cols-4 grid-rows-2 gap-1 lg:w-200 lg:h-100">
             <div class="aspect-square">
                 <div class="item col-6 col-lg-3">
                     <div><svg class="" height="25px" width="25px" aria-hidden="true" focusable="false" data-prefix="fab"
