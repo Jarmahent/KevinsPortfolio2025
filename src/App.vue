@@ -7,6 +7,7 @@ import Skills from './components/sections/Skills.vue';
 import AboutMe from './components/sections/AboutMe.vue';
 import ContactMe from './components/ContactMe.vue';
 import { ref } from 'vue';
+import Projects from './components/sections/Projects.vue';
 
 
 let showingContactMe = ref(false);
@@ -27,7 +28,6 @@ function scrollTo(id: string) {
   <ContactMe v-if="showingContactMe" @close="showingContactMe = false;" />
 
   <div class="flex">
-    <!-- Side Panel -->
     <aside
       class="hidden md:flex md:flex-col md:fixed md:top-0 md:left-0 md:h-screen md:w-64 bg-gray-900 text-white p-4">
       <div class="flex justify-center m-4">
@@ -68,10 +68,10 @@ function scrollTo(id: string) {
           Experience
         </button>
 
-        <!-- <button class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
-          <span class="text-2xl font-bold  flex items-center">+</span>
+        <button @click="scrollTo('projects')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
+          <span class="text-2xl font-bold flex items-center">+</span>
           Projects
-        </button> -->
+        </button>
       </div>
 
 
@@ -95,11 +95,11 @@ function scrollTo(id: string) {
 
     </aside>
 
-    <!-- Main Content -->
     <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100">
       <AboutMe id="about-me" />
       <Skills id="skills" />
       <Experience id="experience" />
+      <Projects id="projects" />
 
 
       <footer class="fixed bottom-0 left-0 w-full bg-gray-100 flex md:hidden h-[60px] items-center shadow z-50">

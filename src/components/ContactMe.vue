@@ -1,7 +1,6 @@
 <template>
     <div class="fixed inset-0 bg-gray-100/50 flex items-center justify-center z-50">
         <div class="bg-white shadow-lg w-11/12 max-w-4xl max-h-[90vh] p-6 overflow-auto relative font-black">
-            <!-- Close Button -->
             <button
                 @click="$emit('close')"
                 class="absolute top-3 left-3 text-black hover:text-gray-700 text-2xl font-bold focus:outline-none"
