@@ -8,6 +8,7 @@ import AboutMe from './components/sections/AboutMe.vue';
 import ContactMe from './components/ContactMe.vue';
 import { ref } from 'vue';
 import Projects from './components/sections/Projects.vue';
+import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
 
 let showingContactMe = ref(false);
@@ -72,6 +73,12 @@ function scrollTo(id: string) {
           <span class="text-2xl font-bold flex items-center">+</span>
           Projects
         </button>
+
+
+        <button @click="scrollTo('favorite-projects')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
+          <span class="text-2xl font-bold flex items-center">+</span>
+          Favorites
+        </button>
       </div>
 
 
@@ -95,11 +102,12 @@ function scrollTo(id: string) {
 
     </aside>
 
-    <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100">
-      <AboutMe id="about-me" />
+    <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100 space-y-7">
+      <AboutMe id="about-me"/>
       <Skills id="skills" />
       <Experience id="experience" />
       <Projects id="projects" />
+      <FavoriteProjects id="favorite-projects" />
 
 
       <footer class="fixed bottom-0 left-0 w-full bg-gray-100 flex md:hidden h-[60px] items-center shadow z-50">
