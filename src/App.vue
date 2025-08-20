@@ -102,12 +102,12 @@ function scrollTo(id: string) {
 
     </aside>
 
-    <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100">
-      <AboutMe id="about-me" class="mb-5"/>
-      <Skills id="skills" class="mb-5" />
-      <Experience id="experience" class="mb-5" />
-      <Projects id="projects" class="mb-5" />
-      <FavoriteProjects id="favorite-projects" class="mb-5" />
+    <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100 space-y-7">
+      <AboutMe id="about-me"/>
+      <Skills id="skills" />
+      <Experience id="experience" />
+      <Projects id="projects" />
+      <FavoriteProjects id="favorite-projects" />
 
 
       <footer class="fixed bottom-0 left-0 w-full bg-gray-100 flex md:hidden h-[60px] items-center shadow z-50">

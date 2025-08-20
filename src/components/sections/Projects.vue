@@ -4,7 +4,7 @@
         <h1 class="text-5xl font-extrabold text-white-900 tracking-tight"> Projects</h1>
         <hr class="border-t-2 border-gray-300 my-4" />
 
-        <div class="w-full h-full grid grid-cols-1 grid-rows-2 gap-1 md:grid-cols-3 md:grid-rows-2">
+        <div class="w-full h-full grid grid-cols-1 gap-1 md:grid-cols-3">
             <div class="flex md:aspect-square">
                 <div class="item col-2 col-lg-3 p-2">
 

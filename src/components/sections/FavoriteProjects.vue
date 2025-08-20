@@ -8,7 +8,6 @@
         <div class="grid grid-cols-1 gap-1 md:grid-cols-3">
             <div v-for="project in links" class="flex">
                 <a :href="project.url" target="_blank" class="group relative h-64 w-full overflow-hidden rounded-md shadow m-1">
-                    <!-- Image placeholder (blurred by default, sharp on hover) -->
                     <img
                         :src="'images/' + project.image"
                         :alt="project.name"
@@ -16,10 +15,8 @@
                         draggable="false"
                     />
 
-                    <!-- Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-                    <!-- Content -->
                     <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
                         <h3 class="text-lg font-semibold">
                             <a href="https://example.com/project-b" target="_blank" rel="noopener"
