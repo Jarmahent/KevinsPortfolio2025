@@ -77,7 +77,7 @@ function scrollTo(id: string) {
 
         <button @click="scrollTo('favorite-projects')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
           <span class="text-2xl font-bold flex items-center">+</span>
-          My Favorite Projects
+          Favorites
         </button>
       </div>
 
@@ -103,11 +103,11 @@ function scrollTo(id: string) {
     </aside>
 
     <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100">
-      <AboutMe id="about-me" />
-      <Skills id="skills" />
-      <Experience id="experience" />
-      <Projects id="projects" />
-      <FavoriteProjects id="favorite-projects" />
+      <AboutMe id="about-me" class="mb-5"/>
+      <Skills id="skills" class="mb-5" />
+      <Experience id="experience" class="mb-5" />
+      <Projects id="projects" class="mb-5" />
+      <FavoriteProjects id="favorite-projects" class="mb-5" />
 
 
       <footer class="fixed bottom-0 left-0 w-full bg-gray-100 flex md:hidden h-[60px] items-center shadow z-50">
