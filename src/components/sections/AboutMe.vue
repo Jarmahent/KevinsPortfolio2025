@@ -31,7 +31,7 @@
 
     </div>
 
-    <a href="./khr2025.pdf" rel="noopener noreferrer" target="_blank"
+    <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank"
         class="ml-5 border border-black text-black bg-transparent px-4 py-2 text-center font-medium inline-block">
         Resume PDF
     </a>
