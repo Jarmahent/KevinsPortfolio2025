@@ -61,5 +61,19 @@ export const links = [
         url: "https://kristoff.it/blog/asynchrony-is-not-concurrency/",
         tags: ["tutorial", "async", "concurrency"],
         image: "brain.png"
+    },
+    {
+        name: "Interplanetary QUIC traffic",
+        description: "A deep dive into networking in space using QUIC protocol!",
+        url: "https://ochagavia.nl/blog/towards-interplanetary-quic-traffic/",
+        tags: ["space", "networking", "quic"],
+        image: "quic-pic.png"
+    },
+    {
+        name: "PDF File of the entire Linux Network stack",
+        description: "A PDF file containing the entire Linux Network stack source code for easy reference.",
+        url: "https://zenodo.org/records/14179366",
+        tags: ["linux", "networking", "pdf"],
+        image: "linux-network.png"
     }
 ]

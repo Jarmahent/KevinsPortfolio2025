@@ -5,13 +5,13 @@
         <hr class="border-t-2 border-gray-300 my-4" />
 
         <p class="text-2xl font-bold mb-5">Other awesome projects & articles</p>
-        <div class="grid grid-cols-1 gap-1 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-1 md:grid-cols-7">
             <div v-for="project in links" class="flex">
                 <a :href="project.url" target="_blank" class="group relative h-64 w-full overflow-hidden rounded-md shadow m-1">
                     <img
                         :src="'images/' + project.image"
                         :alt="project.name"
-                        class="absolute inset-0 h-full w-full"
+                        class="absolute inset-0 w-full"
                         draggable="false"
                     />
 
