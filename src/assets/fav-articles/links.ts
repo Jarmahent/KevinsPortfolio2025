@@ -75,5 +75,20 @@ export const links = [
         url: "https://zenodo.org/records/14179366",
         tags: ["linux", "networking", "pdf"],
         image: "linux-network.png"
-    }
+    },
+    {
+        name: "What an unprocessed photo looks like",
+        description: "Follow the steps your phone takes to process a raw image!",
+        url: "https://maurycyz.com/misc/raw_photo/",
+        tags: ["raw", "photo", "processing"],
+        image: "uill.png"
+    },
+    {
+        name: "Why click synchroniziation is a nightmare.",
+        description: "Explore different methods of clock synchroniziation and why it is a nightmare!",
+        url: "https://arpitbhayani.me/blogs/clock-sync-nightmare/",
+        tags: ["clocks", "synchroniziation", "time"],
+        image: "computer-clock.png"
+    },
+
 ]
