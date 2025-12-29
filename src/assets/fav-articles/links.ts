@@ -84,7 +84,7 @@ export const links = [
         image: "uill.png"
     },
     {
-        name: "Why click synchroniziation is a nightmare.",
+        name: "Why clock synchroniziation is a nightmare.",
         description: "Explore different methods of clock synchroniziation and why it is a nightmare!",
         url: "https://arpitbhayani.me/blogs/clock-sync-nightmare/",
         tags: ["clocks", "synchroniziation", "time"],
