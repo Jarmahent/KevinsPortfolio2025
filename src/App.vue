@@ -16,6 +16,7 @@ const themeOptions = [
   { value: 'studio', label: 'Studio' },
   { value: 'cybertron', label: 'Cybertron' },
   { value: 'classic', label: 'Classic' },
+  { value: 'light', label: 'light' },
 ] as const;
 
 type ThemeName = (typeof themeOptions)[number]['value'];
@@ -31,6 +32,10 @@ const activeTheme = ref<ThemeName>(
 );
 
 const socialIconColor = computed(() => {
+  if (activeTheme.value === 'light') {
+    return '#1d1d1f';
+  }
+
   if (activeTheme.value === 'classic') {
     return '#ffffff';
   }

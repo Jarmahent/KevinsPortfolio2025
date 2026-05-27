@@ -32,7 +32,7 @@ body {
     linear-gradient(135deg, #11110f 0%, #191815 48%, #251c18 100%);
   background-size: 72px 72px, 72px 72px, auto;
   color: var(--paper);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -light-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 button,
@@ -1716,6 +1716,317 @@ html[data-theme="classic"] .contact-waiting {
 html[data-theme="classic"] .icon-button {
   border-color: rgba(17, 24, 39, 0.14);
   background: #f9fafb;
+  color: var(--ink);
+}
+
+html[data-theme="light"] {
+  --ink: #1d1d1f;
+  --ink-soft: #515154;
+  --paper: #fbfbfd;
+  --paper-quiet: #f5f5f7;
+  --line: rgba(0, 0, 0, 0.1);
+  --charcoal: #1d1d1f;
+  --charcoal-2: #2d2d2f;
+  --mint: #34c759;
+  --coral: #0071e3;
+  --gold: #0071e3;
+  --sky: #0071e3;
+  color-scheme: light;
+}
+
+html[data-theme="light"] body {
+  background: #ffffff;
+  color: var(--ink);
+  font-family: -light-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Segoe UI", sans-serif;
+}
+
+html[data-theme="light"] .theme-switcher {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+html[data-theme="light"] .theme-switcher select {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: rgba(245, 245, 247, 0.86);
+  color: var(--ink);
+}
+
+html[data-theme="light"] .desktop-rail {
+  border-right-color: rgba(0, 0, 0, 0.08);
+  background: rgba(251, 251, 253, 0.78);
+  color: var(--ink);
+  box-shadow: 16px 0 60px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(26px) saturate(180%);
+}
+
+html[data-theme="light"] .rail-photo {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .rail-name,
+html[data-theme="light"] .mobile-name {
+  color: var(--ink);
+  font-weight: 780;
+}
+
+html[data-theme="light"] .rail-meta,
+html[data-theme="light"] .mobile-role {
+  color: #6e6e73;
+}
+
+html[data-theme="light"] .availability-pill {
+  border-color: rgba(52, 199, 89, 0.22);
+  background: rgba(52, 199, 89, 0.09);
+  color: #1f7a3a;
+  text-transform: none;
+}
+
+html[data-theme="light"] .availability-dot {
+  background: #34c759;
+  box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.14);
+}
+
+html[data-theme="light"] .nav-button {
+  border-radius: 12px;
+  color: #515154;
+  font-weight: 650;
+}
+
+html[data-theme="light"] .nav-button:hover {
+  border-color: rgba(0, 113, 227, 0.18);
+  background: rgba(0, 113, 227, 0.07);
+  color: #0066cc;
+  transform: none;
+}
+
+html[data-theme="light"] .nav-index {
+  color: #a1a1a6;
+}
+
+html[data-theme="light"] .social-row a {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: rgba(245, 245, 247, 0.82);
+}
+
+html[data-theme="light"] .social-row a:hover {
+  border-color: rgba(0, 113, 227, 0.22);
+  background: rgba(0, 113, 227, 0.07);
+  transform: translateY(-1px);
+}
+
+html[data-theme="light"] .mobile-topbar,
+html[data-theme="light"] .mobile-nav {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(251, 251, 253, 0.82);
+  color: var(--ink);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+html[data-theme="light"] .mobile-brand img {
+  border-radius: 12px;
+}
+
+html[data-theme="light"] .mobile-nav button {
+  color: #515154;
+}
+
+html[data-theme="light"] .mobile-nav button:hover {
+  background: rgba(0, 113, 227, 0.07);
+  color: #0066cc;
+}
+
+html[data-theme="light"] .hero-band {
+  min-height: calc(100vh - 1px);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  background:
+    radial-gradient(circle at 74% 18%, rgba(0, 113, 227, 0.08), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+}
+
+html[data-theme="light"] .section-band {
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .section-band.light {
+  background: #fbfbfd;
+  color: var(--ink);
+}
+
+html[data-theme="light"] .section-band.dark {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+html[data-theme="light"] .section-kicker {
+  color: #0066cc;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[data-theme="light"] .hero-title,
+html[data-theme="light"] .section-title {
+  color: var(--ink);
+  font-weight: 780;
+  letter-spacing: 0;
+}
+
+html[data-theme="light"] .hero-title {
+  max-width: 920px;
+  font-size: clamp(3rem, 9vw, 7.2rem);
+  line-height: 0.92;
+}
+
+html[data-theme="light"] .section-title {
+  line-height: 1;
+}
+
+html[data-theme="light"] .hero-subtitle,
+html[data-theme="light"] .section-copy,
+html[data-theme="light"] .dark .section-copy,
+html[data-theme="light"] .about-copy,
+html[data-theme="light"] .experience-card p,
+html[data-theme="light"] .skill-card p,
+html[data-theme="light"] .project-card p {
+  color: #6e6e73;
+}
+
+html[data-theme="light"] .tag,
+html[data-theme="light"] .small-tag {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: rgba(245, 245, 247, 0.86);
+  color: #515154;
+  font-weight: 650;
+}
+
+html[data-theme="light"] .primary-action,
+html[data-theme="light"] .secondary-action,
+html[data-theme="light"] .quiet-action,
+html[data-theme="light"] .email-button {
+  min-height: 42px;
+  border-radius: 999px;
+  font-weight: 680;
+}
+
+html[data-theme="light"] .primary-action,
+html[data-theme="light"] .email-button {
+  border-color: #0071e3;
+  background: #0071e3;
+  color: #ffffff;
+}
+
+html[data-theme="light"] .secondary-action,
+html[data-theme="light"] .quiet-action {
+  border-color: rgba(0, 113, 227, 0.18);
+  background: rgba(0, 113, 227, 0.07);
+  color: #0066cc;
+}
+
+html[data-theme="light"] .primary-action:hover,
+html[data-theme="light"] .secondary-action:hover,
+html[data-theme="light"] .quiet-action:hover {
+  transform: translateY(-1px);
+}
+
+html[data-theme="light"] .hero-card,
+html[data-theme="light"] .about-photo,
+html[data-theme="light"] .skill-card,
+html[data-theme="light"] .experience-card,
+html[data-theme="light"] .project-card,
+html[data-theme="light"] .favorite-card,
+html[data-theme="light"] .metric,
+html[data-theme="light"] .contact-panel {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .hero-card {
+  background: #f5f5f7;
+}
+
+html[data-theme="light"] .hero-stat {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+html[data-theme="light"] .hero-stat strong,
+html[data-theme="light"] .metric strong,
+html[data-theme="light"] .skill-card h3,
+html[data-theme="light"] .experience-card h3,
+html[data-theme="light"] .project-card h3 {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .hero-stat span,
+html[data-theme="light"] .metric span {
+  color: #6e6e73;
+}
+
+html[data-theme="light"] .skill-icon {
+  border-radius: 14px;
+  color: var(--ink);
+}
+
+html[data-theme="light"] .project-media {
+  background: #f5f5f7;
+}
+
+html[data-theme="light"] .project-body {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .experience-time {
+  color: #86868b;
+  font-weight: 700;
+}
+
+html[data-theme="light"] .experience-card a:hover,
+html[data-theme="light"] .project-card a:hover {
+  color: #0066cc;
+}
+
+html[data-theme="light"] .favorite-card {
+  color: #ffffff;
+}
+
+html[data-theme="light"] .favorite-card::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.68));
+}
+
+html[data-theme="light"] .favorite-card h3,
+html[data-theme="light"] .favorite-card p {
+  color: #ffffff;
+}
+
+html[data-theme="light"] .contact-backdrop {
+  background: rgba(245, 245, 247, 0.72);
+}
+
+html[data-theme="light"] .contact-copy {
+  color: #6e6e73;
+}
+
+html[data-theme="light"] .contact-waiting {
+  background: #f5f5f7;
+}
+
+html[data-theme="light"] .icon-button {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: #f5f5f7;
   color: var(--ink);
 }
 
