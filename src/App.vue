@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue';
@@ -11,6 +11,49 @@ import Projects from './components/sections/Projects.vue';
 import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
 const showingContactMe = ref(false);
+
+const themeOptions = [
+  { value: 'studio', label: 'Studio' },
+  { value: 'cybertron', label: 'Cybertron' },
+  { value: 'classic', label: 'Classic' },
+] as const;
+
+type ThemeName = (typeof themeOptions)[number]['value'];
+
+const savedTheme = typeof window !== 'undefined'
+  ? window.localStorage.getItem('portfolio-theme')
+  : null;
+
+const activeTheme = ref<ThemeName>(
+  themeOptions.some((theme) => theme.value === savedTheme)
+    ? (savedTheme as ThemeName)
+    : 'studio',
+);
+
+const socialIconColor = computed(() => {
+  if (activeTheme.value === 'classic') {
+    return '#ffffff';
+  }
+
+  if (activeTheme.value === 'cybertron') {
+    return '#e9fbff';
+  }
+
+  return '#f7f4ed';
+});
+
+function applyTheme(theme: ThemeName) {
+  document.documentElement.dataset.theme = theme;
+  window.localStorage.setItem('portfolio-theme', theme);
+}
+
+onMounted(() => {
+  applyTheme(activeTheme.value);
+});
+
+watch(activeTheme, (theme) => {
+  applyTheme(theme);
+});
 
 const navItems = [
   { id: 'about-me', label: 'About', short: 'About' },
@@ -32,6 +75,19 @@ function scrollTo(id: string) {
   <ContactMe v-if="showingContactMe" @close="showingContactMe = false" />
 
   <div class="site-shell">
+    <div class="theme-switcher" aria-label="Theme switcher">
+      <label for="theme-picker">Theme</label>
+      <select id="theme-picker" v-model="activeTheme">
+        <option
+          v-for="theme in themeOptions"
+          :key="theme.value"
+          :value="theme.value"
+        >
+          {{ theme.label }}
+        </option>
+      </select>
+    </div>
+
     <aside class="desktop-rail">
       <div>
         <img src="./assets/me.png" alt="Kevin Hernandez" class="rail-photo">
@@ -64,9 +120,9 @@ function scrollTo(id: string) {
           Contact Kevin
         </button>
         <div class="social-row" aria-label="Social links">
-          <LinkedInIcon size="20px" color="#f7f4ed" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
-          <StackOverFlowIcon size="20px" color="#f7f4ed" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
-          <GithubIcon size="20px" color="#f7f4ed" link="https://github.com/Jarmahent" />
+          <LinkedInIcon size="20px" :color="socialIconColor" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
+          <StackOverFlowIcon size="20px" :color="socialIconColor" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
+          <GithubIcon size="20px" :color="socialIconColor" link="https://github.com/Jarmahent" />
         </div>
         <p class="rail-meta">Built with care by Kevin.</p>
       </div>

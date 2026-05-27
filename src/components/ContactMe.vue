@@ -12,12 +12,12 @@
 
       <p class="section-kicker">Contact</p>
       <h2 id="contact-title" class="mt-3 text-4xl font-black leading-none text-[var(--ink)]">Let's talk.</h2>
-      <p class="mt-4 text-base leading-7 text-[rgba(23,21,17,0.66)]">
+      <p class="contact-copy mt-4 text-base leading-7">
         My email appears after a short delay to make scraping a little harder.
       </p>
 
       <div class="mt-6">
-        <div v-if="isWaiting" class="rounded-lg border border-[var(--line)] bg-[rgba(23,21,17,0.04)] p-4">
+        <div v-if="isWaiting" class="contact-waiting rounded-lg border border-[var(--line)] p-4">
           <p class="font-bold text-[var(--ink)]">Please wait...</p>
         </div>
 
