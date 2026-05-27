@@ -1,44 +1,53 @@
 <template>
-    <div>
-        
-    <h1 class="text-5xl font-extrabold text-white-900 tracking-tight"> About Me</h1>
-    <hr class="border-t-2 border-gray-300 my-4" />
+  <section class="section-band light">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-kicker">About me</p>
+        <h2 class="section-title">A practical fullstack developer who likes clean handoffs.</h2>
+      </div>
 
-    <div class="justify-center mt-9 flex-col">
-        <div class="flex">
-            <div class="w-3/3 p-4">
-                <h1 class="text-5xl font-extrabold text-white-900 tracking-tight m-2  border-l-8 border-black pl-2">
-                    Kevin Hernandez</h1>
-                <h2 class="text-2xl font-extrabold text-white-900 tracking-tight m-2">Fullstack Developer</h2>
-                <p class="font-mono font-extrabold text-sm">
-                    I am a fullstack developer with a strong foundation in Python, particularly using FastAPI and
-                    Pydantic
-                    to build and maintain APIs. My experience spans across the full development lifecycle from writing
-                    clean
-                    backend logic to creating deployment pipelines and maintaining production systems.
-                    In addition to backend development, I have experience working with Node.js, as well as frontend
-                    frameworks like Vue.js, React, and Angular.
-                    I’ve also designed and maintained CI/CD pipelines mainly with GitHub Actions, written comprehensive
-                    unit
-                    tests, and contributed to infrastructure and deployment processes.
-                    I value clean, maintainable code, clear communication, and thoughtful collaboration.
-                </p>
+      <div class="about-grid">
+        <div>
+          <p class="about-copy">
+            I am a fullstack developer with a strong foundation in Python, particularly FastAPI and Pydantic,
+            for building and maintaining APIs. My experience spans the full development lifecycle, from writing
+            clean backend logic to creating deployment pipelines and maintaining production systems.
+          </p>
+          <p class="about-copy mt-5">
+            In addition to backend development, I have experience with Node.js and frontend frameworks including
+            Vue.js, React, and Angular. I have also designed and maintained CI/CD pipelines, mainly with GitHub
+            Actions, written comprehensive unit tests, and contributed to infrastructure and deployment processes.
+            I value clean, maintainable code, clear communication, and thoughtful collaboration.
+          </p>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>Python</strong>
+              <span>Primary language</span>
             </div>
-            <div class="w-3/3 flex justify-center items-center">
-                <img src="../../assets/me2.jpg" alt="" class="grayscale object-cover w-72 h-72 rounded-md" />
+            <div class="metric">
+              <strong>FastAPI</strong>
+              <span>API development</span>
             </div>
+            <div class="metric">
+              <strong>GitHub</strong>
+              <span>CI/CD actions</span>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank" class="quiet-action">
+              Resume PDF
+            </a>
+          </div>
         </div>
 
+        <div class="about-photo">
+          <img src="../../assets/me2-edited.png" alt="Kevin Hernandez">
+        </div>
+      </div>
     </div>
-
-    <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank"
-        class="ml-5 border border-black text-black bg-transparent px-4 py-2 text-center font-medium inline-block">
-        Resume PDF
-    </a>
-    </div>
-
-
-
+  </section>
 </template>
 
 <script setup lang="ts"></script>

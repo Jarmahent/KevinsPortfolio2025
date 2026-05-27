@@ -1,133 +1,152 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
-import GithubIcon from './components/icons/GithubIcon.vue'
+import GithubIcon from './components/icons/GithubIcon.vue';
 import Experience from './components/sections/Experience.vue';
 import Skills from './components/sections/Skills.vue';
 import AboutMe from './components/sections/AboutMe.vue';
 import ContactMe from './components/ContactMe.vue';
-import { ref } from 'vue';
 import Projects from './components/sections/Projects.vue';
 import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
+const showingContactMe = ref(false);
 
-let showingContactMe = ref(false);
-
+const navItems = [
+  { id: 'about-me', label: 'About', short: 'About' },
+  { id: 'skills', label: 'Skills', short: 'Skills' },
+  { id: 'experience', label: 'Experience', short: 'Work' },
+  { id: 'projects', label: 'Projects', short: 'Builds' },
+  { id: 'favorite-projects', label: 'Favorites', short: 'Reads' },
+];
 
 function scrollTo(id: string) {
-  const el = document.getElementById(id)
+  const el = document.getElementById(id);
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
+    el.scrollIntoView({ behavior: 'smooth' });
   }
 }
-
 </script>
 
 <template>
+  <ContactMe v-if="showingContactMe" @close="showingContactMe = false" />
 
-
-  <ContactMe v-if="showingContactMe" @close="showingContactMe = false;" />
-
-  <div class="flex">
-    <aside
-      class="hidden md:flex md:flex-col md:fixed md:top-0 md:left-0 md:h-screen md:w-64 bg-gray-900 text-white p-4">
-      <div class="flex justify-center m-4">
-        <img src="./assets/me.png" alt="kevin hernandez" class="w-30 h-30 rounded-full object-cover">
-      </div>
-      <div class="m-4 flex-grow-[.8]">
-        <div>
-          <h2 class="text-2xl font-extrabold text-white-00 tracking-tight border-l-4 border-white pl-3"> Kevin Hernandez
-          </h2>
-
-        </div>
-        <div class="mt-2 font-bold">
-          <p class="text-md  tracking-tight">Fullstack Developer</p>
-
-        </div>
-        <div class="mt-2 font-bold text">
-          <p class="text-md  tracking-tight">Northern Virginia</p>
-
+  <div class="site-shell">
+    <aside class="desktop-rail">
+      <div>
+        <img src="./assets/me.png" alt="Kevin Hernandez" class="rail-photo">
+        <h2 class="rail-name">Kevin Hernandez</h2>
+        <p class="rail-meta">Fullstack Developer<br>Northern Virginia</p>
+        <div class="availability-pill">
+          <span class="availability-dot"></span>
+          Building useful software
         </div>
       </div>
 
-
-      <div class="flex flex-col flex-grow-[2]">
-        <button @click="scrollTo('about-me')"
-          class="mb-2 hover:bg-gray-600 flex items-center border-b gap-2 px-3 py-1 ">
-          <span class="text-2xl font-bold  flex items-center">+</span>
-          About Me
+      <nav class="nav-stack" aria-label="Portfolio sections">
+        <button
+          v-for="(item, index) in navItems"
+          :key="item.id"
+          type="button"
+          class="nav-button"
+          @click="scrollTo(item.id)"
+        >
+          <span>{{ item.label }}</span>
+          <span class="nav-index">0{{ index + 1 }}</span>
         </button>
+      </nav>
 
-        <button @click="scrollTo('skills')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
-          <span class="text-2xl font-bold flex items-center">+</span>
-          Skills & Technologies
+      <div class="rail-actions">
+        <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank" class="primary-action">
+          Resume PDF
+        </a>
+        <button type="button" class="secondary-action" @click="showingContactMe = true">
+          Contact Kevin
         </button>
-
-        <button @click="scrollTo('experience')"
-          class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
-          <span class="text-2xl font-bold flex items-center">+</span>
-          Experience
-        </button>
-
-        <button @click="scrollTo('projects')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
-          <span class="text-2xl font-bold flex items-center">+</span>
-          Projects
-        </button>
-
-
-        <button @click="scrollTo('favorite-projects')" class="mb-2 hover:bg-gray-600 flex items-center  border-b gap-2 px-3 py-1 ">
-          <span class="text-2xl font-bold flex items-center">+</span>
-          Favorites
-        </button>
+        <div class="social-row" aria-label="Social links">
+          <LinkedInIcon size="20px" color="#f7f4ed" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
+          <StackOverFlowIcon size="20px" color="#f7f4ed" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
+          <GithubIcon size="20px" color="#f7f4ed" link="https://github.com/Jarmahent" />
+        </div>
+        <p class="rail-meta">Built with care by Kevin.</p>
       </div>
-
-
-      <button @click="showingContactMe = true"
-        class="rounded shadow animate-bounce transition duration-150 border border-white text-white bg-transparent px-4 py-2 text-center font-medium inline-block">
-        Contact me!
-      </button>
-
-      <footer class="p-1 flex flex-row">
-        <LinkedInIcon class="p-1" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
-        <StackOverFlowIcon class="p-1" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
-        <GithubIcon class="p-1" link="https://github.com/Jarmahent" />
-      </footer>
-      <footer>
-
-        <button class="mb-2 hover:bg-gray-600 flex items-center gap-2 px-3 py-1 ">
-          Built with ❤ By Kevin
-        </button>
-
-      </footer>
-
     </aside>
 
-    <main class="md:ml-64 ml-0 flex-1 p-6 bg-gray-100 space-y-7">
-      <AboutMe id="about-me"/>
+    <main class="main-canvas">
+      <header class="mobile-topbar">
+        <div class="mobile-brand">
+          <img src="./assets/me.png" alt="Kevin Hernandez">
+          <div>
+            <div class="mobile-name">Kevin Hernandez</div>
+            <div class="mobile-role">Fullstack Developer</div>
+          </div>
+        </div>
+        <button type="button" class="secondary-action" @click="showingContactMe = true">
+          Contact
+        </button>
+      </header>
+
+      <section class="hero-band">
+        <div class="section-inner hero-grid">
+          <div>
+            <p class="section-kicker">Fullstack Developer / Northern Virginia</p>
+            <h1 class="hero-title">Clean APIs. Useful interfaces. Reliable systems.</h1>
+            <p class="hero-subtitle">
+              I build and maintain production software across Python, FastAPI, Node.js, Vue, React, Angular, CI/CD,
+              testing, and deployment workflows.
+            </p>
+            <div class="hero-tags" aria-label="Core specialties">
+              <span class="tag">Python + FastAPI</span>
+              <span class="tag">Vue / React / Angular</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Backend systems</span>
+            </div>
+            <div class="hero-actions">
+              <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank" class="primary-action">
+                View Resume
+              </a>
+              <button type="button" class="secondary-action" @click="scrollTo('projects')">
+                See Projects
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <img src="./assets/me2-edited.png" alt="Kevin Hernandez">
+            <div class="hero-statbar">
+              <div class="hero-stat">
+                <strong>8+</strong>
+                <span>Years web dev</span>
+              </div>
+              <div class="hero-stat">
+                <strong>5</strong>
+                <span>Roles & contracts</span>
+              </div>
+              <div class="hero-stat">
+                <strong>3</strong>
+                <span>Frontend stacks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AboutMe id="about-me" />
       <Skills id="skills" />
       <Experience id="experience" />
       <Projects id="projects" />
       <FavoriteProjects id="favorite-projects" />
 
-
-      <footer class="fixed bottom-0 left-0 w-full bg-gray-100 flex md:hidden h-[60px] items-center shadow z-50">
-        <div class="flex ml-2">
-          <LinkedInIcon size="40px" class="p-1 ml-3" color="black" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
-          <StackOverFlowIcon size="40px" class="p-1 ml-3 " color="black" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
-          <GithubIcon size="40px" class="p-1 ml-3" color="black" link="https://github.com/Jarmahent" />
-        </div>
-        <div class="flex-1"></div>
+      <nav class="mobile-nav" aria-label="Portfolio sections">
         <button
-          @click="showingContactMe = true"
-          class="mr-4 rounded shadow animate-bounce transition duration-150 border bg-black border-black text-white px-4 py-2 text-center font-medium md:hidden"
+          v-for="item in navItems"
+          :key="item.id"
+          type="button"
+          @click="scrollTo(item.id)"
         >
-          Contact me!
+          {{ item.short }}
         </button>
-      </footer>
-
-
-
-
+      </nav>
     </main>
   </div>
 </template>

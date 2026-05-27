@@ -1,84 +1,70 @@
 <template>
-    <div>
-        <h1 class="text-5xl font-extrabold text-white-900 tracking-tight"> Experience</h1>
-        <hr class="border-t-2 border-gray-300 my-4" />
+  <section class="section-band light">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-kicker">Experience</p>
+        <h2 class="section-title">Production work across startups, logistics, and contract builds.</h2>
+      </div>
 
-        <div class="max-w-md mx-7 p-6">
-            <div class="relative border-l-2 border-gray-300">
-                <div class="mb-8 ml-6">
-                    <span
-                        class="absolute -left-3.5 flex items-center justify-center w-7 h-7 bg-gray-900 rounded-full ring-4 ring-white">
-                    </span>
-                    <h3 class="font-semibold text-2xl text-gray-900"><a class="inline-flex space-x-1"
-                            href="https://www.usai.io/" target="_blank">
-                            <span>USAI</span>
-                            <NewTabIcon class="w-4 h-4" />
-                        </a></h3>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Aug 2025</time>
-                    <p class="text-base font-normal text-gray-500">Hired to build out Angular based applications and support website development.</p>
-                </div>
-                <div class="mb-8 ml-6">
-                    <span
-                        class="absolute -left-3.5 flex items-center justify-center w-7 h-7 bg-gray-900 rounded-full ring-4 ring-white">
-                    </span>
-                    <h3 class="font-semibold text-2xl text-gray-900"><a class="inline-flex space-x-1"
-                            href="https://www.risingtide.us/" target="_blank">
-                            <span>RisingTide</span>
-                            <NewTabIcon class="w-4 h-4" />
-                        </a></h3>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Apr 2024 - Aug 2025</time>
-                    <p class="text-base font-normal text-gray-500">Hired on as a Backend Engineer to maintain and work
-                        on new features for Route Optimization platform.</p>
-                </div>
-                <div class="mb-8 ml-6">
-                    <span
-                        class="absolute -left-3.5 flex items-center justify-center w-7 h-7 bg-gray-900 rounded-full ring-4 ring-white">
-                    </span>
-                    <h3 class="font-semibold text-2xl text-gray-900"><a class="inline-flex space-x-1"
-                            href="https://hubgroup.com" target="_blank">
-                            <span>HubGroup</span>
-                            <NewTabIcon class="w-4 h-4" />
-                        </a></h3>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Oct 2019 - Apr 2024</time>
-                    <p class="text-base font-normal text-gray-500">Hired on as a Fullstack developer to manager, create,
-                        and optimize Final Mile backend services for HubGroup</p>
-                </div>
-                <div class="mb-8 ml-6">
-                    <span
-                        class="absolute -left-3.5 flex items-center justify-center w-7 h-7 bg-gray-900 rounded-full ring-4 ring-white">
-                    </span>
-                    <h3 class="font-semibold text-2xl text-gray-900"><a class="inline-flex space-x-1"
-                            href="https://activeprime.com" target="_blank">
-                            <span>ActivePrime</span>
-                            <NewTabIcon class="w-4 h-4" />
-                        </a></h3>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Fullstack Developer</time>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Jan 2019 - Feb 2021</time>
-                    <p class="text-base font-normal text-gray-500">Landed a role at ActivePrime.com creating and
-                        managing their CRM plugin for Salesforce</p>
-                </div>
-                <div class="mb-8 ml-6">
-                    <span
-                        class="absolute -left-3.5 flex items-center justify-center w-7 h-7 bg-gray-900 rounded-full ring-4 ring-white">
-                    </span>
-                    <h3 class="font-semibold text-2xl text-gray-900"><a class="inline-flex space-x-1"
-                            href="https://www.upwork.com/freelancers/~010fc2505a8c7800b0" target="_blank">
-                            <span>Various Contracts</span>
-                            <NewTabIcon class="w-4 h-4" />
-                        </a></h3>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Fullstack Developer</time>
-                    <time class="block mb-2 text-md font-normal leading-none text-gray-400">Jan 2018</time>
-                    <p class="text-base font-normal text-gray-500">Began doing contracting on Upwork.com</p>
-                </div>
-
-            </div>
-        </div>
-
+      <div class="experience-list">
+        <article v-for="role in roles" :key="role.company" class="experience-card">
+          <div>
+            <p v-if="role.title" class="experience-time">{{ role.title }}</p>
+            <p class="experience-time">{{ role.dates }}</p>
+          </div>
+          <div>
+            <h3>
+              <a :href="role.url" target="_blank" rel="noopener noreferrer">
+                {{ role.company }}
+                <NewTabIcon class="w-4 h-4" />
+              </a>
+            </h3>
+            <p>{{ role.description }}</p>
+          </div>
+        </article>
+      </div>
     </div>
-
+  </section>
 </template>
 
 <script setup lang="ts">
 import NewTabIcon from '../icons/NewTabIcon.vue';
 
+const roles = [
+  {
+    company: 'USAI',
+    url: 'https://www.usai.io/',
+    dates: 'Aug 2025',
+    title: '',
+    description: 'Hired to build Angular-based applications and support website development.',
+  },
+  {
+    company: 'RisingTide',
+    url: 'https://www.risingtide.us/',
+    dates: 'Apr 2024 - Aug 2025',
+    title: 'Backend Engineer',
+    description: 'Maintained and built new features for a route optimization platform.',
+  },
+  {
+    company: 'HubGroup',
+    url: 'https://hubgroup.com',
+    dates: 'Oct 2019 - Apr 2024',
+    title: 'Fullstack Developer',
+    description: 'Managed, created, and optimized Final Mile backend services for HubGroup.',
+  },
+  {
+    company: 'ActivePrime',
+    url: 'https://activeprime.com',
+    dates: 'Jan 2019 - Feb 2021',
+    title: 'Fullstack Developer',
+    description: 'Created and managed ActivePrime CRM plugin work for Salesforce.',
+  },
+  {
+    company: 'Various Contracts',
+    url: 'https://www.upwork.com/freelancers/~010fc2505a8c7800b0',
+    dates: 'Jan 2018',
+    title: 'Fullstack Developer',
+    description: 'Began doing contract development work on Upwork.',
+  },
+];
 </script>
