@@ -64,9 +64,9 @@ function scrollTo(id: string) {
           Contact Kevin
         </button>
         <div class="social-row" aria-label="Social links">
-          <LinkedInIcon size="20px" color="#f7f4ed" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
-          <StackOverFlowIcon size="20px" color="#f7f4ed" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
-          <GithubIcon size="20px" color="#f7f4ed" link="https://github.com/Jarmahent" />
+          <LinkedInIcon size="20px" color="#e9fbff" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
+          <StackOverFlowIcon size="20px" color="#e9fbff" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
+          <GithubIcon size="20px" color="#e9fbff" link="https://github.com/Jarmahent" />
         </div>
         <p class="rail-meta">Built with care by Kevin.</p>
       </div>
