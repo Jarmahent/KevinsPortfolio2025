@@ -16,7 +16,7 @@ const themeOptions = [
   { value: 'studio', label: 'Studio' },
   { value: 'cybertron', label: 'Cybertron' },
   { value: 'classic', label: 'Classic' },
-  { value: 'light', label: 'light' },
+  { value: 'light', label: 'Light' },
 ] as const;
 
 type ThemeName = (typeof themeOptions)[number]['value'];
