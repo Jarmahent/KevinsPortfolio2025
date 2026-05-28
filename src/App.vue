@@ -126,7 +126,7 @@ function scrollTo(id: string) {
         </button>
         <div class="social-row" aria-label="Social links">
           <LinkedInIcon size="20px" :color="socialIconColor" link="https://www.linkedin.com/in/kevin-h-9932a5153/" />
-          <StackOverFlowIcon size="20px" :color="socialIconColor" link="https://stackoverflow.com/users/5875610/kevin-hernandez" />
+          <StackOverFlowIcon size="20px" :color="socialIconColor" link="https://stackoverflow.com/users/24874447/kevin-h" />
           <GithubIcon size="20px" :color="socialIconColor" link="https://github.com/Jarmahent" />
         </div>
         <p class="rail-meta">Built with care by Kevin.</p>
