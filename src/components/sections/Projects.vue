@@ -11,12 +11,12 @@
           <div class="project-media">
             <iframe
               title="Loteria live demo"
-              src="https://loteria.zachryapp.com"
+              src="https://kevinsloteria.netlify.app/"
             ></iframe>
           </div>
           <div class="project-body">
             <h3>
-              <a href="https://loteria.zachryapp.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://kevinsloteria.netlify.app/" target="_blank" rel="noopener noreferrer">
                 Loteria
                 <NewTabIcon class="w-4 h-4" />
               </a>
