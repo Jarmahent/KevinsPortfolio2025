@@ -172,8 +172,12 @@ function scrollTo(id: string) {
             </div>
           </div>
 
-          <div class="hero-card">
-            <img src="./assets/me2-edited.png" alt="Kevin Hernandez">
+          <div class="hero-card hero-snapshot" aria-label="Professional snapshot">
+            <p class="snapshot-kicker">Current focus</p>
+            <h2>Production-minded fullstack work</h2>
+            <p>
+              I like codebases where backend contracts, UI states, deployment, and tests all support each other.
+            </p>
             <div class="hero-statbar">
               <div class="hero-stat">
                 <strong>8+</strong>

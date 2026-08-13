@@ -42,8 +42,22 @@
           </div>
         </div>
 
-        <div class="about-photo">
-          <img src="../../assets/me2-edited.png" alt="Kevin Hernandez">
+        <div class="about-focus" aria-label="Working style">
+          <div>
+            <span>01</span>
+            <strong>Clear contracts</strong>
+            <p>APIs, types, and handoffs that make the next change easier to reason about.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Practical delivery</strong>
+            <p>Small, tested improvements that fit the system already in production.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Thoughtful UI</strong>
+            <p>Interfaces that stay useful under real data, real deadlines, and real users.</p>
+          </div>
         </div>
       </div>
     </div>

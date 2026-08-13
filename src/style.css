@@ -452,22 +452,42 @@ img {
   background: rgba(247, 244, 237, 0.06);
 }
 
-.hero-card img {
-  display: block;
-  aspect-ratio: 4 / 5;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.hero-snapshot {
+  display: grid;
+  align-content: end;
+  min-height: 420px;
+  padding: 24px;
+}
+
+.snapshot-kicker {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-snapshot h2 {
+  margin-top: 14px;
+  color: var(--paper);
+  font-size: clamp(2rem, 5vw, 3.45rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+.hero-snapshot p:not(.snapshot-kicker) {
+  margin-top: 16px;
+  color: rgba(247, 244, 237, 0.68);
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .hero-statbar {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  left: 14px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  margin-top: 28px;
 }
 
 .hero-stat {
@@ -511,18 +531,38 @@ img {
   line-height: 1.85;
 }
 
-.about-photo {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #ded6c8;
+.about-focus {
+  display: grid;
+  gap: 10px;
 }
 
-.about-photo img {
+.about-focus div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(23, 21, 17, 0.035);
+  padding: 18px;
+}
+
+.about-focus span {
   display: block;
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  object-fit: cover;
+  color: var(--coral);
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.about-focus strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 880;
+}
+
+.about-focus p {
+  margin-top: 8px;
+  color: rgba(23, 21, 17, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.58;
 }
 
 .metric-grid {
@@ -1223,13 +1263,11 @@ html[data-theme="cybertron"] .hero-card::before {
   mix-blend-mode: screen;
 }
 
-html[data-theme="cybertron"] .hero-card img,
-html[data-theme="cybertron"] .about-photo img,
 html[data-theme="cybertron"] .project-media img {
   filter: saturate(1.08) contrast(1.08);
 }
 
-html[data-theme="cybertron"] .hero-statbar {
+html[data-theme="cybertron"] .hero-snapshot > * {
   z-index: 2;
 }
 
@@ -1247,7 +1285,7 @@ html[data-theme="cybertron"] .hero-stat span {
   color: rgba(233, 251, 255, 0.68);
 }
 
-html[data-theme="cybertron"] .about-photo {
+html[data-theme="cybertron"] .about-focus div {
   position: relative;
   border-color: rgba(103, 246, 255, 0.32);
   background: rgba(103, 246, 255, 0.08);
@@ -1255,7 +1293,7 @@ html[data-theme="cybertron"] .about-photo {
   clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
 }
 
-html[data-theme="cybertron"] .about-photo::after {
+html[data-theme="cybertron"] .about-focus div::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -1263,6 +1301,15 @@ html[data-theme="cybertron"] .about-photo::after {
   background:
     linear-gradient(140deg, transparent 0 58%, rgba(103, 246, 255, 0.18) 58.3%, transparent 59%),
     repeating-linear-gradient(0deg, transparent 0 8px, rgba(255, 255, 255, 0.03) 8px 9px);
+}
+
+html[data-theme="cybertron"] .about-focus span,
+html[data-theme="cybertron"] .about-focus strong {
+  color: var(--cyan);
+}
+
+html[data-theme="cybertron"] .about-focus p {
+  color: rgba(233, 251, 255, 0.66);
 }
 
 html[data-theme="cybertron"] .metric {
@@ -1613,7 +1660,7 @@ html[data-theme="classic"] .tag {
 }
 
 html[data-theme="classic"] .hero-card,
-html[data-theme="classic"] .about-photo,
+html[data-theme="classic"] .about-focus div,
 html[data-theme="classic"] .skill-card,
 html[data-theme="classic"] .experience-card,
 html[data-theme="classic"] .project-card,
@@ -1632,6 +1679,8 @@ html[data-theme="classic"] .hero-stat {
 
 html[data-theme="classic"] .hero-stat strong,
 html[data-theme="classic"] .metric strong,
+html[data-theme="classic"] .about-focus strong,
+html[data-theme="classic"] .hero-snapshot h2,
 html[data-theme="classic"] .skill-card h3,
 html[data-theme="classic"] .experience-card h3,
 html[data-theme="classic"] .project-card h3 {
@@ -1640,6 +1689,8 @@ html[data-theme="classic"] .project-card h3 {
 
 html[data-theme="classic"] .hero-stat span,
 html[data-theme="classic"] .metric span,
+html[data-theme="classic"] .about-focus p,
+html[data-theme="classic"] .hero-snapshot p:not(.snapshot-kicker),
 html[data-theme="classic"] .skill-card p,
 html[data-theme="classic"] .experience-card p,
 html[data-theme="classic"] .project-card p,
@@ -1939,7 +1990,7 @@ html[data-theme="light"] .quiet-action:hover {
 }
 
 html[data-theme="light"] .hero-card,
-html[data-theme="light"] .about-photo,
+html[data-theme="light"] .about-focus div,
 html[data-theme="light"] .skill-card,
 html[data-theme="light"] .experience-card,
 html[data-theme="light"] .project-card,
@@ -1964,6 +2015,8 @@ html[data-theme="light"] .hero-stat {
 
 html[data-theme="light"] .hero-stat strong,
 html[data-theme="light"] .metric strong,
+html[data-theme="light"] .about-focus strong,
+html[data-theme="light"] .hero-snapshot h2,
 html[data-theme="light"] .skill-card h3,
 html[data-theme="light"] .experience-card h3,
 html[data-theme="light"] .project-card h3 {
@@ -1971,7 +2024,9 @@ html[data-theme="light"] .project-card h3 {
 }
 
 html[data-theme="light"] .hero-stat span,
-html[data-theme="light"] .metric span {
+html[data-theme="light"] .metric span,
+html[data-theme="light"] .about-focus p,
+html[data-theme="light"] .hero-snapshot p:not(.snapshot-kicker) {
   color: #6e6e73;
 }
 
