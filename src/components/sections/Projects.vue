@@ -25,16 +25,26 @@
               Built for the San Antonio Spurs so fans could play and win merchandise during games.
               This is a live embed, not a screenshot.
             </p>
+            <p class="project-note">Go ahead and use it. It's fully playable.</p>
           </div>
         </article>
 
         <article class="project-card">
           <div class="project-media">
-            <img src="../../assets/projects/dbc1final.png" alt="Spurs FanMoji app screen">
+            <iframe
+              title="Spurs character game live demo"
+              src="https://spurscharactergame.netlify.app/"
+            ></iframe>
           </div>
           <div class="project-body">
-            <h3>Spurs FanMoji</h3>
+            <h3>
+              <a href="https://spurscharactergame.netlify.app/" target="_blank" rel="noopener noreferrer">
+                Spurs FanMoji
+                <NewTabIcon class="w-4 h-4" />
+              </a>
+            </h3>
             <p>A quickly built fan engagement app for use during games.</p>
+            <p class="project-note">Go ahead and use it. It's fully playable.</p>
           </div>
         </article>
 
