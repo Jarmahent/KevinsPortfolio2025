@@ -1531,6 +1531,22 @@ html[data-theme="cybertron"] .email-button {
   font-weight: 900;
 }
 
+html[data-theme="cybertron"] .pagination-button,
+html[data-theme="cybertron"] .pagination-page {
+  border-color: rgba(103, 246, 255, 0.32);
+  background: rgba(4, 17, 28, 0.82);
+  color: rgba(226, 253, 255, 0.92);
+  box-shadow: 0 0 24px rgba(103, 246, 255, 0.12);
+}
+
+html[data-theme="cybertron"] .pagination-button:hover:not(:disabled),
+html[data-theme="cybertron"] .pagination-page:hover,
+html[data-theme="cybertron"] .pagination-page.active {
+  border-color: rgba(103, 246, 255, 0.8);
+  background: linear-gradient(135deg, rgba(103, 246, 255, 0.95), rgba(77, 141, 255, 0.9));
+  color: #031018;
+}
+
 html[data-theme="classic"] {
   --ink: #111827;
   --ink-soft: #374151;
@@ -1815,6 +1831,24 @@ html[data-theme="classic"] .small-tag {
   border-color: rgba(255, 255, 255, 0.28);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.16);
+}
+
+html[data-theme="classic"] .pagination-button,
+html[data-theme="classic"] .pagination-page {
+  border-color: #111827;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(17, 24, 39, 0.1);
+}
+
+html[data-theme="classic"] .pagination-button:hover:not(:disabled),
+html[data-theme="classic"] .pagination-page:hover,
+html[data-theme="classic"] .pagination-page.active {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+  transform: none;
 }
 
 html[data-theme="classic"] .contact-backdrop {
@@ -2128,6 +2162,21 @@ html[data-theme="light"] .favorite-card::after {
 
 html[data-theme="light"] .favorite-card h3,
 html[data-theme="light"] .favorite-card p {
+  color: #ffffff;
+}
+
+html[data-theme="light"] .pagination-button,
+html[data-theme="light"] .pagination-page {
+  border-color: rgba(0, 113, 227, 0.18);
+  background: rgba(0, 113, 227, 0.07);
+  color: #0066cc;
+}
+
+html[data-theme="light"] .pagination-button:hover:not(:disabled),
+html[data-theme="light"] .pagination-page:hover,
+html[data-theme="light"] .pagination-page.active {
+  border-color: rgba(0, 113, 227, 0.32);
+  background: #0071e3;
   color: #ffffff;
 }
 
