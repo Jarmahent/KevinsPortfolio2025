@@ -90,5 +90,26 @@ export const links = [
         tags: ["clocks", "synchronization", "time"],
         image: "computer-clock.png"
     },
+    {
+        name: "How Tailscale found an old race condition bug in SQLite",
+        description: "How Tailscale found an old race condition bug in SQLite.",
+        url: "https://tailscale.com/blog/sqlite-wal-reset-bug",
+        tags: ["sqlite", "tailscale", "debugging"],
+        image: "sqlitebug.png"
+    },
+    {
+        name: "Beautiful and functional QR codes",
+        description: "Beautiful and functional QR codes.",
+        url: "https://www.andrewt.net/dithered-qr-codes/wtf/",
+        tags: ["qr-codes", "visuals", "web"],
+        image: "qr-codes.png"
+    },
+    {
+        name: "PGSimCity",
+        description: "A beautiful visual representation of a PostgreSQL server.",
+        url: "https://nikolays.github.io/PGSimCity/",
+        tags: ["postgresql", "visualization", "systems"],
+        image: "pgsimcity.png"
+    },
 
 ]
