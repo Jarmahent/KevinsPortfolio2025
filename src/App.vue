@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue';
@@ -12,24 +12,25 @@ import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
 const showingContactMe = ref(false);
 
-const themeOptions = [
-  { value: 'studio', label: 'Studio' },
-  { value: 'cybertron', label: 'Cybertron' },
-  { value: 'classic', label: 'Classic' },
-  { value: 'light', label: 'Light' },
-] as const;
+type ThemeName = 'studio' | 'cybertron' | 'classic' | 'light';
 
-type ThemeName = (typeof themeOptions)[number]['value'];
+let themeTimer: ReturnType<typeof window.setTimeout> | undefined;
 
-const savedTheme = typeof window !== 'undefined'
-  ? window.localStorage.getItem('portfolio-theme')
-  : null;
+function getThemeForDate(date = new Date()): ThemeName {
+  const day = date.getDay();
 
-const activeTheme = ref<ThemeName>(
-  themeOptions.some((theme) => theme.value === savedTheme)
-    ? (savedTheme as ThemeName)
-    : 'studio',
-);
+  if (day >= 1 && day <= 3) {
+    return 'classic';
+  }
+
+  if (day >= 4 && day <= 5) {
+    return 'cybertron';
+  }
+
+  return 'studio';
+}
+
+const activeTheme = ref<ThemeName>(getThemeForDate());
 
 const socialIconColor = computed(() => {
   if (activeTheme.value === 'light') {
@@ -52,8 +53,30 @@ function applyTheme(theme: ThemeName) {
   window.localStorage.setItem('portfolio-theme', theme);
 }
 
-onMounted(() => {
+function syncThemeToWeekday() {
+  activeTheme.value = getThemeForDate();
   applyTheme(activeTheme.value);
+}
+
+function scheduleNextThemeSync() {
+  const now = new Date();
+  const tomorrow = new Date(now);
+  tomorrow.setHours(24, 0, 0, 0);
+  themeTimer = window.setTimeout(() => {
+    syncThemeToWeekday();
+    scheduleNextThemeSync();
+  }, tomorrow.getTime() - now.getTime());
+}
+
+onMounted(() => {
+  syncThemeToWeekday();
+  scheduleNextThemeSync();
+});
+
+onUnmounted(() => {
+  if (themeTimer) {
+    window.clearTimeout(themeTimer);
+  }
 });
 
 watch(activeTheme, (theme) => {
@@ -80,19 +103,6 @@ function scrollTo(id: string) {
   <ContactMe v-if="showingContactMe" @close="showingContactMe = false" />
 
   <div class="site-shell">
-    <div class="theme-switcher" aria-label="Theme switcher">
-      <label for="theme-picker">Theme</label>
-      <select id="theme-picker" v-model="activeTheme">
-        <option
-          v-for="theme in themeOptions"
-          :key="theme.value"
-          :value="theme.value"
-        >
-          {{ theme.label }}
-        </option>
-      </select>
-    </div>
-
     <aside class="desktop-rail">
       <div>
         <img src="./assets/me.png" alt="Kevin Hernandez" class="rail-photo">
