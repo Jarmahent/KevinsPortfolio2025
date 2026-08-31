@@ -36,7 +36,7 @@
           </div>
 
           <div class="button-row">
-            <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank" class="quiet-action">
+            <a href="./khrn2026.pdf" rel="noopener noreferrer" target="_blank" class="quiet-action">
               Resume PDF
             </a>
           </div>

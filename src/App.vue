@@ -128,7 +128,7 @@ function scrollTo(id: string) {
       </nav>
 
       <div class="rail-actions">
-        <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank" class="primary-action">
+        <a href="./khrn2026.pdf" rel="noopener noreferrer" target="_blank" class="primary-action">
           Resume PDF
         </a>
         <button type="button" class="secondary-action" @click="showingContactMe = true">
@@ -173,7 +173,7 @@ function scrollTo(id: string) {
               <span class="tag">Backend systems</span>
             </div>
             <div class="hero-actions">
-              <a href="./khrn2025.pdf" rel="noopener noreferrer" target="_blank" class="primary-action">
+              <a href="./khrn2026.pdf" rel="noopener noreferrer" target="_blank" class="primary-action">
                 View Resume
               </a>
               <button type="button" class="secondary-action" @click="scrollTo('projects')">
