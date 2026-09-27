@@ -34,7 +34,7 @@ const roles = [
   {
     company: 'USAI',
     url: 'https://www.usai.io/',
-    dates: 'Aug 2025',
+    dates: 'Aug 2025 - Sept 2026',
     title: 'Software Engineer',
     description: 'Hired to build Angular-based applications and support website development.',
   },
