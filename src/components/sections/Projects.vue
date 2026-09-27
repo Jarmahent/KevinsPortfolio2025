@@ -9,6 +9,27 @@
       <div class="project-grid">
         <article class="project-card">
           <div class="project-media">
+            <img
+              class="project-logo"
+              src="../../assets/projects/gource-generator.png"
+              alt="Gource Generator logo"
+            >
+          </div>
+          <div class="project-body">
+            <h3>
+              <a href="https://github.com/Jarmahent/GourceGenerator" target="_blank" rel="noopener noreferrer">
+                Gource Generator
+                <NewTabIcon class="w-4 h-4" />
+              </a>
+            </h3>
+            <p>
+              Visualize a Git repository's history with Gource, from the first commit to the latest changes.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-media">
             <iframe
               title="Loteria live demo"
               src="https://kevinsloteria.netlify.app/"
@@ -75,3 +96,10 @@
 <script setup lang="ts">
 import NewTabIcon from '../icons/NewTabIcon.vue';
 </script>
+
+<style scoped>
+.project-media .project-logo {
+  object-fit: contain;
+  object-position: center;
+}
+</style>
