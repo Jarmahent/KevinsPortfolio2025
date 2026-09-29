@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import LinkedInIcon from './components/icons/LinkedInIcon.vue';
 import StackOverFlowIcon from './components/icons/StackOverFlowIcon.vue';
 import GithubIcon from './components/icons/GithubIcon.vue';
@@ -12,28 +12,18 @@ import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
 const showingContactMe = ref(false);
 
-type ThemeName = 'studio' | 'cybertron' | 'classic' | 'light' | 'workbench';
+const themeNames = ['studio', 'cybertron', 'classic', 'light', 'workbench'] as const;
+type ThemeName = (typeof themeNames)[number];
 
-// Set to null to restore the automatic weekday theme rotation.
-const previewTheme: ThemeName | null = 'workbench';
+function chooseRandomTheme(): ThemeName {
+  const previousTheme = window.localStorage.getItem('portfolio-theme');
+  const availableThemes = themeNames.filter((theme) => theme !== previousTheme);
+  const randomIndex = Math.floor(Math.random() * availableThemes.length);
 
-let themeTimer: ReturnType<typeof window.setTimeout> | undefined;
-
-function getThemeForDate(date = new Date()): ThemeName {
-  const day = date.getDay();
-
-  if (day >= 1 && day <= 3) {
-    return 'classic';
-  }
-
-  if (day >= 4 && day <= 5) {
-    return 'cybertron';
-  }
-
-  return 'studio';
+  return availableThemes[randomIndex];
 }
 
-const activeTheme = ref<ThemeName>(previewTheme ?? getThemeForDate());
+const activeTheme = ref<ThemeName>(chooseRandomTheme());
 
 const socialIconColor = computed(() => {
   if (activeTheme.value === 'light') {
@@ -60,35 +50,9 @@ function applyTheme(theme: ThemeName) {
   window.localStorage.setItem('portfolio-theme', theme);
 }
 
-function syncThemeToWeekday() {
-  activeTheme.value = previewTheme ?? getThemeForDate();
-  applyTheme(activeTheme.value);
-}
-
-function scheduleNextThemeSync() {
-  const now = new Date();
-  const tomorrow = new Date(now);
-  tomorrow.setHours(24, 0, 0, 0);
-  themeTimer = window.setTimeout(() => {
-    syncThemeToWeekday();
-    scheduleNextThemeSync();
-  }, tomorrow.getTime() - now.getTime());
-}
-
-onMounted(() => {
-  syncThemeToWeekday();
-  scheduleNextThemeSync();
-});
-
-onUnmounted(() => {
-  if (themeTimer) {
-    window.clearTimeout(themeTimer);
-  }
-});
-
 watch(activeTheme, (theme) => {
   applyTheme(theme);
-});
+}, { immediate: true });
 
 const navItems = [
   { id: 'about-me', label: 'About', short: 'About' },
