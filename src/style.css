@@ -2218,3 +2218,578 @@ html[data-theme="light"] .icon-button {
     flex: 1;
   }
 }
+
+/* Workbench preview theme. The weekday theme rotation remains available in App.vue. */
+html[data-theme="workbench"] {
+  --ink: #000000;
+  --ink-soft: #303030;
+  --paper: #ffffff;
+  --paper-quiet: #c0c0c0;
+  --line: #808080;
+  --charcoal: #000080;
+  --charcoal-2: #00005a;
+  --mint: #008000;
+  --coral: #000080;
+  --gold: #ffff00;
+  --sky: #008080;
+  --workbench-surface: #c0c0c0;
+  --workbench-light: #ffffff;
+  --workbench-mid: #dfdfdf;
+  --workbench-shadow: #808080;
+  --workbench-dark: #000000;
+  --workbench-title: #000080;
+  --workbench-desktop: #008080;
+  color-scheme: light;
+}
+
+html[data-theme="workbench"] body {
+  background-color: var(--workbench-desktop);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: var(--ink);
+  font-family: "MS Sans Serif", Tahoma, Geneva, Arial, sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: none;
+}
+
+html[data-theme="workbench"] button,
+html[data-theme="workbench"] select,
+html[data-theme="workbench"] input,
+html[data-theme="workbench"] textarea {
+  font-family: inherit;
+}
+
+html[data-theme="workbench"] :focus-visible {
+  outline: 1px dotted #000000;
+  outline-offset: -5px;
+}
+
+html[data-theme="workbench"] ::selection {
+  background: var(--workbench-title);
+  color: #ffffff;
+}
+
+html[data-theme="workbench"] .theme-switcher,
+html[data-theme="workbench"] .desktop-rail,
+html[data-theme="workbench"] .mobile-topbar,
+html[data-theme="workbench"] .mobile-nav,
+html[data-theme="workbench"] .contact-panel {
+  border: 2px solid;
+  border-color: var(--workbench-light) var(--workbench-dark) var(--workbench-dark) var(--workbench-light);
+  border-radius: 0;
+  background: var(--workbench-surface);
+  box-shadow:
+    inset 1px 1px 0 var(--workbench-mid),
+    inset -1px -1px 0 var(--workbench-shadow),
+    2px 2px 0 rgba(0, 0, 0, 0.28);
+  backdrop-filter: none;
+}
+
+html[data-theme="workbench"] .theme-switcher {
+  color: #000000;
+}
+
+html[data-theme="workbench"] .theme-switcher label {
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[data-theme="workbench"] .theme-switcher select {
+  border: 2px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff;
+  color: #000000;
+}
+
+html[data-theme="workbench"] .desktop-rail {
+  border-width: 2px 3px 2px 2px;
+  padding: 18px;
+  color: #000000;
+}
+
+html[data-theme="workbench"] .rail-photo,
+html[data-theme="workbench"] .mobile-brand img {
+  border: 3px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff;
+  padding: 2px;
+  filter: contrast(1.08) saturate(0.9);
+}
+
+html[data-theme="workbench"] .rail-name {
+  margin-top: 14px;
+  border: 2px solid;
+  border-color: #9fa7d5 #00004f #00004f #9fa7d5;
+  background: var(--workbench-title);
+  padding: 7px 8px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+html[data-theme="workbench"] .rail-meta {
+  color: #202020;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+html[data-theme="workbench"] .availability-pill {
+  border: 2px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff;
+  padding: 7px 9px;
+  color: #000000;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[data-theme="workbench"] .availability-dot {
+  border: 1px solid #004f00;
+  border-radius: 0;
+  background: #00a000;
+  box-shadow: none;
+}
+
+html[data-theme="workbench"] .nav-stack {
+  gap: 6px;
+  margin-top: 32px;
+}
+
+html[data-theme="workbench"] .nav-button,
+html[data-theme="workbench"] .social-row a,
+html[data-theme="workbench"] .primary-action,
+html[data-theme="workbench"] .secondary-action,
+html[data-theme="workbench"] .quiet-action,
+html[data-theme="workbench"] .pagination-button,
+html[data-theme="workbench"] .pagination-page,
+html[data-theme="workbench"] .icon-button,
+html[data-theme="workbench"] .email-button,
+html[data-theme="workbench"] .mobile-nav button {
+  border: 2px solid;
+  border-color: var(--workbench-light) var(--workbench-dark) var(--workbench-dark) var(--workbench-light);
+  border-radius: 0;
+  background: var(--workbench-surface);
+  box-shadow: inset 1px 1px 0 var(--workbench-mid), inset -1px -1px 0 var(--workbench-shadow);
+  color: #000000;
+  font-weight: 700;
+  transition: none;
+}
+
+html[data-theme="workbench"] .nav-button {
+  padding: 10px 11px;
+}
+
+html[data-theme="workbench"] .nav-button:hover,
+html[data-theme="workbench"] .social-row a:hover,
+html[data-theme="workbench"] .primary-action:hover,
+html[data-theme="workbench"] .secondary-action:hover,
+html[data-theme="workbench"] .quiet-action:hover,
+html[data-theme="workbench"] .pagination-button:hover:not(:disabled),
+html[data-theme="workbench"] .pagination-page:hover,
+html[data-theme="workbench"] .pagination-page.active,
+html[data-theme="workbench"] .icon-button:hover,
+html[data-theme="workbench"] .email-button:hover,
+html[data-theme="workbench"] .mobile-nav button:hover {
+  border-color: var(--workbench-dark) var(--workbench-light) var(--workbench-light) var(--workbench-dark);
+  background: #b6b6b6;
+  color: #000000;
+  box-shadow: inset 1px 1px 0 var(--workbench-shadow);
+  transform: none;
+}
+
+html[data-theme="workbench"] .nav-button:active,
+html[data-theme="workbench"] .primary-action:active,
+html[data-theme="workbench"] .secondary-action:active,
+html[data-theme="workbench"] .quiet-action:active,
+html[data-theme="workbench"] .pagination-button:active:not(:disabled),
+html[data-theme="workbench"] .pagination-page:active,
+html[data-theme="workbench"] .icon-button:active,
+html[data-theme="workbench"] .email-button:active,
+html[data-theme="workbench"] .mobile-nav button:active {
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+
+html[data-theme="workbench"] .nav-index {
+  color: #414141;
+  font-family: "Courier New", monospace;
+}
+
+html[data-theme="workbench"] .rail-actions {
+  gap: 8px;
+}
+
+html[data-theme="workbench"] .desktop-rail .primary-action {
+  border-color: #9fa7d5 #00004f #00004f #9fa7d5;
+  background: var(--workbench-title);
+  color: #ffffff;
+  box-shadow: inset 1px 1px 0 #4f5ca0, inset -1px -1px 0 #00003f;
+}
+
+html[data-theme="workbench"] .social-row a {
+  height: 36px;
+  width: 36px;
+}
+
+html[data-theme="workbench"] .main-canvas {
+  background: var(--workbench-desktop);
+}
+
+html[data-theme="workbench"] .mobile-topbar {
+  border-width: 0 0 3px;
+  padding: 9px 12px;
+}
+
+html[data-theme="workbench"] .mobile-name {
+  color: #000000;
+  font-weight: 700;
+}
+
+html[data-theme="workbench"] .mobile-role {
+  color: #303030;
+}
+
+html[data-theme="workbench"] .mobile-nav {
+  gap: 5px;
+  padding: 6px;
+}
+
+html[data-theme="workbench"] .section-band,
+html[data-theme="workbench"] .hero-band {
+  border-bottom: 3px solid;
+  border-bottom-color: var(--workbench-dark);
+}
+
+html[data-theme="workbench"] .section-band.light {
+  background-color: var(--workbench-surface);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.045) 0,
+    rgba(255, 255, 255, 0.045) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  color: #000000;
+}
+
+html[data-theme="workbench"] .section-band.dark {
+  background-color: var(--workbench-desktop);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: #ffffff;
+}
+
+html[data-theme="workbench"] .hero-band {
+  background-color: var(--workbench-desktop);
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.025) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.025) 75%),
+    linear-gradient(45deg, rgba(0, 0, 0, 0.025) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.025) 75%);
+  background-position: 0 0, 3px 3px;
+  background-size: 6px 6px;
+}
+
+html[data-theme="workbench"] .section-kicker,
+html[data-theme="workbench"] .snapshot-kicker,
+html[data-theme="workbench"] .experience-time {
+  color: var(--workbench-title);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+html[data-theme="workbench"] .hero-band .section-kicker,
+html[data-theme="workbench"] .section-band.dark .section-kicker {
+  color: #ffff00;
+}
+
+html[data-theme="workbench"] .hero-title,
+html[data-theme="workbench"] .section-title {
+  letter-spacing: -0.035em;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="workbench"] .hero-title {
+  color: #ffffff;
+}
+
+html[data-theme="workbench"] .section-title {
+  color: inherit;
+  text-shadow: 1px 1px 0 #ffffff;
+}
+
+html[data-theme="workbench"] .section-band.dark .section-title {
+  text-shadow: 2px 2px 0 #000000;
+}
+
+html[data-theme="workbench"] .hero-subtitle,
+html[data-theme="workbench"] .dark .section-copy {
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="workbench"] .section-copy,
+html[data-theme="workbench"] .about-copy,
+html[data-theme="workbench"] .about-focus p,
+html[data-theme="workbench"] .skill-card p,
+html[data-theme="workbench"] .experience-card p,
+html[data-theme="workbench"] .project-card p,
+html[data-theme="workbench"] .contact-copy {
+  color: #202020;
+}
+
+html[data-theme="workbench"] .tag,
+html[data-theme="workbench"] .small-tag,
+html[data-theme="workbench"] .project-card .project-note {
+  border: 2px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+html[data-theme="workbench"] .primary-action,
+html[data-theme="workbench"] .secondary-action,
+html[data-theme="workbench"] .quiet-action {
+  min-height: 42px;
+  padding: 9px 15px;
+}
+
+html[data-theme="workbench"] .hero-card,
+html[data-theme="workbench"] .about-focus div,
+html[data-theme="workbench"] .metric,
+html[data-theme="workbench"] .skill-card,
+html[data-theme="workbench"] .experience-card,
+html[data-theme="workbench"] .project-card {
+  border: 2px solid;
+  border-color: var(--workbench-light) var(--workbench-dark) var(--workbench-dark) var(--workbench-light);
+  border-radius: 0;
+  background: var(--workbench-surface);
+  box-shadow:
+    inset 1px 1px 0 var(--workbench-mid),
+    inset -1px -1px 0 var(--workbench-shadow),
+    3px 3px 0 rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="workbench"] .hero-card {
+  border-top-width: 30px;
+  border-top-color: var(--workbench-title);
+}
+
+html[data-theme="workbench"] .hero-card::before {
+  position: absolute;
+  top: -24px;
+  right: 5px;
+  height: 16px;
+  width: 48px;
+  border-left: 18px solid var(--workbench-surface);
+  border-right: 18px solid var(--workbench-surface);
+  content: "";
+  box-shadow: inset 0 0 0 1px var(--workbench-light), 0 0 0 1px var(--workbench-dark);
+}
+
+html[data-theme="workbench"] .hero-snapshot h2,
+html[data-theme="workbench"] .hero-stat strong,
+html[data-theme="workbench"] .about-focus strong,
+html[data-theme="workbench"] .metric strong,
+html[data-theme="workbench"] .skill-card h3,
+html[data-theme="workbench"] .experience-card h3,
+html[data-theme="workbench"] .project-card h3 {
+  color: #000000;
+}
+
+html[data-theme="workbench"] .hero-snapshot p:not(.snapshot-kicker),
+html[data-theme="workbench"] .hero-stat span,
+html[data-theme="workbench"] .metric span {
+  color: #303030;
+}
+
+html[data-theme="workbench"] .hero-stat {
+  border: 2px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: inset 1px 1px 0 #00000022;
+  backdrop-filter: none;
+}
+
+html[data-theme="workbench"] .about-focus div,
+html[data-theme="workbench"] .metric,
+html[data-theme="workbench"] .skill-card,
+html[data-theme="workbench"] .experience-card,
+html[data-theme="workbench"] .project-card {
+  position: relative;
+}
+
+html[data-theme="workbench"] .about-focus div::before,
+html[data-theme="workbench"] .skill-card::before,
+html[data-theme="workbench"] .experience-card::before,
+html[data-theme="workbench"] .project-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background: var(--workbench-title);
+  content: "";
+}
+
+html[data-theme="workbench"] .about-focus span {
+  color: var(--workbench-title);
+}
+
+html[data-theme="workbench"] .skill-icon {
+  border: 2px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff !important;
+  color: var(--workbench-title);
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: none !important;
+}
+
+html[data-theme="workbench"] .experience-card a:hover,
+html[data-theme="workbench"] .project-card a:hover {
+  background: var(--workbench-title);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+html[data-theme="workbench"] .project-media {
+  border-bottom: 2px solid;
+  border-bottom-color: var(--workbench-dark);
+  background: #808080;
+}
+
+html[data-theme="workbench"] .project-media img {
+  filter: contrast(1.08) saturate(0.88);
+}
+
+html[data-theme="workbench"] .project-body {
+  border-top: 1px solid var(--workbench-light);
+}
+
+html[data-theme="workbench"] .favorite-card {
+  border: 4px solid;
+  border-color: var(--workbench-light) var(--workbench-dark) var(--workbench-dark) var(--workbench-light);
+  border-radius: 0;
+  background: var(--workbench-surface);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="workbench"] .favorite-card::after {
+  background: linear-gradient(180deg, transparent 12%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+html[data-theme="workbench"] .favorite-card img {
+  filter: contrast(1.08) saturate(0.88);
+  image-rendering: auto;
+  transition: none;
+}
+
+html[data-theme="workbench"] .favorite-card:hover img {
+  transform: none;
+}
+
+html[data-theme="workbench"] .favorite-card h3,
+html[data-theme="workbench"] .favorite-card p {
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #000000;
+}
+
+html[data-theme="workbench"] .favorite-card .small-tag {
+  border-color: #ffffff #404040 #404040 #ffffff;
+  background: var(--workbench-surface);
+  color: #000000;
+  text-shadow: none;
+}
+
+html[data-theme="workbench"] .pagination-button,
+html[data-theme="workbench"] .pagination-page {
+  min-height: 38px;
+}
+
+html[data-theme="workbench"] .pagination-page.active {
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  background: var(--workbench-title);
+  color: #ffffff;
+}
+
+html[data-theme="workbench"] .pagination-button:disabled {
+  color: #777777;
+  text-shadow: 1px 1px 0 #ffffff;
+  opacity: 1;
+}
+
+html[data-theme="workbench"] .contact-backdrop {
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: none;
+}
+
+html[data-theme="workbench"] .contact-panel {
+  border-top-width: 30px;
+  border-top-color: var(--workbench-title);
+  color: #000000;
+}
+
+html[data-theme="workbench"] .contact-panel::before {
+  position: absolute;
+  top: -24px;
+  left: 7px;
+  color: #ffffff;
+  content: "Contact Kevin";
+  font-weight: 700;
+}
+
+html[data-theme="workbench"] .contact-panel .icon-button {
+  top: -25px;
+  right: 3px;
+  height: 20px;
+  width: 22px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+html[data-theme="workbench"] .contact-waiting {
+  border: 2px solid;
+  border-color: var(--workbench-shadow) var(--workbench-light) var(--workbench-light) var(--workbench-shadow);
+  border-radius: 0;
+  background: #ffffff;
+}
+
+html[data-theme="workbench"] .email-button {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  html[data-theme="workbench"] .hero-card {
+    border-top-width: 26px;
+  }
+
+  html[data-theme="workbench"] .mobile-nav {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  html[data-theme="workbench"] .mobile-nav button {
+    padding: 8px 2px;
+    font-size: 0.69rem;
+  }
+}

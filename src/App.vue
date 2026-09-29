@@ -12,7 +12,10 @@ import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
 const showingContactMe = ref(false);
 
-type ThemeName = 'studio' | 'cybertron' | 'classic' | 'light';
+type ThemeName = 'studio' | 'cybertron' | 'classic' | 'light' | 'workbench';
+
+// Set to null to restore the automatic weekday theme rotation.
+const previewTheme: ThemeName | null = 'workbench';
 
 let themeTimer: ReturnType<typeof window.setTimeout> | undefined;
 
@@ -30,7 +33,7 @@ function getThemeForDate(date = new Date()): ThemeName {
   return 'studio';
 }
 
-const activeTheme = ref<ThemeName>(getThemeForDate());
+const activeTheme = ref<ThemeName>(previewTheme ?? getThemeForDate());
 
 const socialIconColor = computed(() => {
   if (activeTheme.value === 'light') {
@@ -39,6 +42,10 @@ const socialIconColor = computed(() => {
 
   if (activeTheme.value === 'classic') {
     return '#ffffff';
+  }
+
+  if (activeTheme.value === 'workbench') {
+    return '#000000';
   }
 
   if (activeTheme.value === 'cybertron') {
@@ -54,7 +61,7 @@ function applyTheme(theme: ThemeName) {
 }
 
 function syncThemeToWeekday() {
-  activeTheme.value = getThemeForDate();
+  activeTheme.value = previewTheme ?? getThemeForDate();
   applyTheme(activeTheme.value);
 }
 
