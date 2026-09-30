@@ -1,0 +1,13 @@
+@media (max-width: 767px) {
+  .theme-switcher {
+    top: auto;
+    right: 12px;
+    bottom: 82px;
+    left: 12px;
+    justify-content: space-between;
+  }
+
+  .theme-switcher select {
+    flex: 1;
+  }
+}
