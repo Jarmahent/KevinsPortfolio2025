@@ -1,0 +1,631 @@
+/* Vaporwave: scoped surface treatments over the shared portfolio layout. */
+html[data-theme="vaporwave"] {
+  color-scheme: light;
+  --ink: #382053;
+  --ink-soft: #594568;
+  --paper: #fff8e9;
+  --paper-quiet: #f0e3f5;
+  --line: #77608b;
+  --mint: #92eadc;
+  --coral: #843969;
+  --gold: #ffe69b;
+  --sky: #8fdded;
+  --vapor-purple: #613b91;
+  --vapor-pink: #f5a9d3;
+  --vapor-lilac: #c4a9e6;
+  --vapor-mono: "Lucida Console", "Courier New", monospace;
+  --vapor-raised: inset 2px 2px 0 #fffaf2, inset -2px -2px 0 #b299bf;
+  --vapor-shadow: 5px 5px 0 #61427b3b;
+}
+
+html[data-theme="vaporwave"] body {
+  background:
+    linear-gradient(#fff8 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, #fff8 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(160deg, #94dce8, #b6b8eb 48%, #f0add8);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+html[data-theme="vaporwave"] ::selection {
+  background: var(--vapor-purple);
+  color: #fff8e9;
+}
+
+html[data-theme="vaporwave"] :focus-visible {
+  outline: 3px solid var(--vapor-purple);
+  outline-offset: 4px;
+}
+
+html[data-theme="vaporwave"] :is(button, a) {
+  touch-action: manipulation;
+}
+
+/* The existing rail becomes a pastel desktop window. */
+html[data-theme="vaporwave"] .desktop-rail {
+  overflow-y: auto;
+  border-right: 2px solid var(--vapor-purple);
+  background: linear-gradient(155deg, #fbe7ed, #e5dcf5 65%, #d1eef0);
+  padding-top: 48px;
+  box-shadow: inset -3px 0 #fff8, 5px 0 0 #61427b21;
+  backdrop-filter: none;
+}
+
+html[data-theme="vaporwave"] .desktop-rail::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 25px;
+  border-bottom: 2px solid var(--vapor-purple);
+  background: var(--vapor-purple);
+  padding: 4px 12px;
+  color: #fff8e9;
+  font: 11px / 15px var(--vapor-mono);
+  letter-spacing: 0.08em;
+  content: "KEVIN / PERSONAL COMPUTER" / "";
+  pointer-events: none;
+}
+
+html[data-theme="vaporwave"] :is(.rail-photo, .mobile-brand img) {
+  border: 2px solid var(--vapor-purple);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--vapor-pink), 5px 5px 0 var(--vapor-purple);
+}
+
+html[data-theme="vaporwave"] .rail-name {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+html[data-theme="vaporwave"] :is(.rail-meta, .mobile-role, .nav-index) {
+  color: var(--ink-soft);
+}
+
+html[data-theme="vaporwave"] .availability-pill {
+  border-color: #718e89;
+  border-radius: 0;
+  background: #d9f5e7;
+  color: #315f52;
+  box-shadow: inset 1px 1px 0 #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.025em;
+}
+
+html[data-theme="vaporwave"] .availability-dot {
+  border: 1px solid #326450;
+  border-radius: 0;
+  background: #58bd94;
+  box-shadow: 2px 2px 0 #32645033;
+}
+
+html[data-theme="vaporwave"] .nav-button {
+  border-color: #a996b8;
+  border-radius: 0;
+  background: #f6edfb;
+  color: var(--ink);
+  box-shadow: var(--vapor-raised);
+  font-family: var(--vapor-mono);
+  font-size: 0.9rem;
+}
+
+html[data-theme="vaporwave"] .nav-button > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+html[data-theme="vaporwave"] .nav-button > span:first-child::before {
+  width: 21px;
+  height: 17px;
+  background: linear-gradient(#eee0ff 0 5px, var(--vapor-lilac) 5px);
+  box-shadow: inset -2px -2px #8865af;
+  clip-path: polygon(0 0, 42% 0, 54% 22%, 100% 22%, 100% 100%, 0 100%);
+  content: "";
+}
+
+html[data-theme="vaporwave"] .rail-actions {
+  padding-top: 24px;
+}
+
+html[data-theme="vaporwave"] .social-row a svg {
+  fill: currentColor;
+}
+
+html[data-theme="vaporwave"] :is(.mobile-topbar, .mobile-nav) {
+  border: 2px solid var(--line);
+  border-radius: 0;
+  background: #f3dff2;
+  box-shadow: var(--vapor-raised), var(--vapor-shadow);
+  backdrop-filter: none;
+}
+
+html[data-theme="vaporwave"] .mobile-name {
+  color: var(--ink);
+}
+
+/* A tiled desktop, with a striped sunset and checkerboard status strip. */
+html[data-theme="vaporwave"] .hero-band {
+  position: relative;
+  isolation: isolate;
+  border-bottom: 2px solid var(--vapor-purple);
+  background:
+    linear-gradient(#fff6 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, #fff6 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(160deg, #9de6ea 0%, #c8c1ee 54%, #f4b4d9 100%);
+}
+
+html[data-theme="vaporwave"] .hero-band::before {
+  position: absolute;
+  inset: 22px 20px auto;
+  border-block: 1px solid #8566a1;
+  background: #f7eefac9;
+  padding: 6px 10px;
+  color: var(--vapor-purple);
+  font: 11px / 16px var(--vapor-mono);
+  letter-spacing: 0.12em;
+  content: "PORTFOLIO.EXE / KEVIN HERNANDEZ" / "";
+  pointer-events: none;
+}
+
+html[data-theme="vaporwave"] .hero-band::after {
+  position: absolute;
+  inset: auto 20px 22px;
+  height: 12px;
+  border: 1px solid #8566a1;
+  background: repeating-conic-gradient(#8665ac 0% 25%, #fff4e6 0% 50%) 0 0 / 20px 20px;
+  content: "";
+  pointer-events: none;
+}
+
+html[data-theme="vaporwave"] .hero-title {
+  color: var(--vapor-purple);
+  font-family: "Arial Black", "Trebuchet MS", sans-serif;
+  font-size: clamp(2.85rem, 5.5vw, 6.5rem);
+  font-style: italic;
+  font-weight: 950;
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+  text-shadow: 2px 2px 0 #fff8e9, 5px 5px 0 #e89dcc;
+}
+
+html[data-theme="vaporwave"] .section-title {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4.3vw, 3.7rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+html[data-theme="vaporwave"] :is(.section-kicker, .snapshot-kicker) {
+  width: fit-content;
+  border: 1px solid #9a7db0;
+  background: #efe2fb;
+  padding: 5px 9px;
+  color: var(--vapor-purple);
+  font: 700 0.72rem / 1.5 var(--vapor-mono);
+  letter-spacing: 0.09em;
+}
+
+html[data-theme="vaporwave"] .hero-band .section-kicker {
+  margin-bottom: 20px;
+  background: #fff3cb;
+}
+
+html[data-theme="vaporwave"] :is(.hero-subtitle, .section-copy, .about-copy, .about-focus p, .skill-card p, .experience-card p, .project-card p, .contact-copy),
+html[data-theme="vaporwave"] .dark .section-copy,
+html[data-theme="vaporwave"] .hero-snapshot p:not(.snapshot-kicker) {
+  color: var(--ink-soft);
+}
+
+html[data-theme="vaporwave"] .hero-subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+html[data-theme="vaporwave"] :is(.section-band.light, .section-band.dark) {
+  border-bottom: 2px solid #ab91bd;
+  background:
+    linear-gradient(#9673ab10 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, #9673ab10 1px, transparent 1px) 0 0 / 32px 32px,
+    #fcf4e8;
+  color: var(--ink);
+}
+
+html[data-theme="vaporwave"] #skills {
+  background-color: #e9e0f6;
+}
+
+html[data-theme="vaporwave"] #projects {
+  background-color: #e1f1f0;
+}
+
+html[data-theme="vaporwave"] #favorite-projects {
+  background-color: #f1d9ec;
+}
+
+/* Window chrome is decorative CSS; original card content and order stay intact. */
+html[data-theme="vaporwave"] :is(.hero-card, .about-focus > :where(div), .metric, .skill-card, .experience-card, .project-card, .favorite-card, .contact-panel) {
+  position: relative;
+  border: 2px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: var(--vapor-raised), var(--vapor-shadow);
+}
+
+html[data-theme="vaporwave"] :is(.hero-card, .skill-card, .experience-card, .project-card, .favorite-card, .contact-panel)::before {
+  position: absolute;
+  z-index: 2;
+  inset: 2px 2px auto;
+  height: 25px;
+  border-bottom: 1px solid var(--line);
+  background: repeating-linear-gradient(0deg, #fff5 0 1px, transparent 1px 3px), linear-gradient(90deg, #c2a8e2, #eac4e6 65%, #afe8ea);
+  overflow: hidden;
+  padding: 4px 54px 4px 8px;
+  color: var(--ink);
+  font: 11px / 16px var(--vapor-mono);
+  letter-spacing: 0.045em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  content: "";
+  pointer-events: none;
+}
+
+html[data-theme="vaporwave"] :is(.hero-card, .skill-card, .experience-card, .project-card)::after {
+  position: absolute;
+  z-index: 3;
+  top: 5px;
+  right: 7px;
+  border: 1px solid #8d729e;
+  background: #f4e9f5;
+  padding: 0 3px;
+  color: var(--ink);
+  box-shadow: inset 1px 1px #fff;
+  font: 12px / 16px var(--vapor-mono);
+  content: "− □ ×" / "";
+  pointer-events: none;
+}
+
+html[data-theme="vaporwave"] .hero-card::before {
+  content: "CURRENT_FOCUS.TXT" / "";
+}
+
+html[data-theme="vaporwave"] .hero-snapshot {
+  padding-top: 135px;
+  background:
+    linear-gradient(transparent 0 122px, #fff8e9 122px),
+    repeating-linear-gradient(0deg, transparent 0 8px, #d5bce9 8px 11px) center 34px / 100% 88px no-repeat,
+    radial-gradient(circle at 50% 100%, #fff6b4 0 48px, transparent 49px) center 34px / 100% 88px no-repeat,
+    linear-gradient(110deg, #a7e8ed, #d5bce9 55%, #f4b4d9);
+}
+
+html[data-theme="vaporwave"] .hero-snapshot h2 {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+html[data-theme="vaporwave"] :is(.hero-stat, .metric) {
+  border: 1px solid #a28bb2;
+  border-radius: 0;
+  background: #eee6f5;
+  box-shadow: inset 1px 1px #a28bb2, inset -1px -1px #fff;
+  backdrop-filter: none;
+}
+
+html[data-theme="vaporwave"] :is(.hero-stat strong, .metric strong, .about-focus strong, .skill-card h3, .experience-card h3, .project-card h3) {
+  color: var(--ink);
+}
+
+html[data-theme="vaporwave"] :is(.hero-stat strong, .metric strong) {
+  font-family: var(--vapor-mono);
+}
+
+html[data-theme="vaporwave"] :is(.hero-stat span, .metric span) {
+  color: var(--ink-soft);
+}
+
+html[data-theme="vaporwave"] .about-focus > div {
+  border-left: 5px solid #b295d3;
+}
+
+html[data-theme="vaporwave"] .about-focus > div:nth-child(2) {
+  border-left-color: #74c7c3;
+}
+
+html[data-theme="vaporwave"] .about-focus > div:nth-child(3) {
+  border-left-color: #e59bc2;
+}
+
+html[data-theme="vaporwave"] .about-focus span {
+  color: var(--vapor-purple);
+  font-family: var(--vapor-mono);
+}
+
+html[data-theme="vaporwave"] :is(.skill-card, .experience-card) {
+  padding-top: 46px;
+}
+
+html[data-theme="vaporwave"] .skill-card::before {
+  content: "TOOLKIT" / "";
+}
+
+html[data-theme="vaporwave"] .skill-icon {
+  border: 1px solid #9a7db0;
+  border-radius: 0;
+  box-shadow: inset 1px 1px #fff, 3px 3px #d7c6e1;
+  color: var(--ink);
+  font-family: var(--vapor-mono);
+}
+
+html[data-theme="vaporwave"] .skill-card:nth-child(4n + 1) .skill-icon {
+  background: #fff0ae;
+}
+
+html[data-theme="vaporwave"] .skill-card:nth-child(4n + 2) .skill-icon {
+  background: #bceeed;
+}
+
+html[data-theme="vaporwave"] .skill-card:nth-child(4n + 3) .skill-icon {
+  background: #f6c9e0;
+}
+
+html[data-theme="vaporwave"] .skill-card:nth-child(4n) .skill-icon {
+  background: #d7c6f1;
+}
+
+html[data-theme="vaporwave"] .experience-card::before {
+  content: "WORK_HISTORY" / "";
+}
+
+html[data-theme="vaporwave"] .experience-card .experience-time {
+  color: #715383;
+  font-family: var(--vapor-mono);
+  font-size: 0.78rem;
+}
+
+html[data-theme="vaporwave"] :is(.experience-card, .project-card) a:hover {
+  color: #9b306b;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+html[data-theme="vaporwave"] :is(.project-card, .favorite-card) {
+  padding-top: 29px;
+}
+
+html[data-theme="vaporwave"] .project-card::before {
+  content: "PROJECT.EXE" / "";
+}
+
+html[data-theme="vaporwave"] .project-media {
+  border-bottom: 2px solid var(--line);
+  background: #ded4ed;
+}
+
+html[data-theme="vaporwave"] .project-body {
+  background: #fff8e9;
+}
+
+html[data-theme="vaporwave"] :is(.tag, .project-card .project-note) {
+  border: 1px solid #967ba7;
+  border-radius: 0;
+  background: #f9eaf4;
+  color: var(--ink);
+  box-shadow: inset 1px 1px #fff, 2px 2px #87629b33;
+  font-family: var(--vapor-mono);
+  font-size: 0.75rem;
+}
+
+html[data-theme="vaporwave"] .tag:nth-child(2n) {
+  background: #e0f6ed;
+}
+
+html[data-theme="vaporwave"] .favorite-card::before {
+  content: "BOOKMARK.URL" / "";
+}
+
+html[data-theme="vaporwave"] .favorite-card::after {
+  background: linear-gradient(180deg, #38205300 25%, #38205380);
+}
+
+html[data-theme="vaporwave"] .favorite-content {
+  border-top: 1px solid #f0b2de;
+  background: #392054f2;
+}
+
+html[data-theme="vaporwave"] .favorite-card h3 {
+  color: #fff6e5;
+}
+
+html[data-theme="vaporwave"] .favorite-card p {
+  color: #eadced;
+}
+
+html[data-theme="vaporwave"] .small-tag {
+  border-color: #b9a1cd;
+  border-radius: 0;
+  background: #573873;
+  color: #f9e8f7;
+  font-family: var(--vapor-mono);
+}
+
+/* Raised, pressed, disabled, and keyboard states share the same retro controls. */
+html[data-theme="vaporwave"] :is(.primary-action, .secondary-action, .quiet-action, .social-row :where(a), .pagination-button, .pagination-page, .icon-button, .email-button, .mobile-nav :where(button)) {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #eee3f5;
+  color: var(--ink);
+  box-shadow: var(--vapor-raised), 2px 2px 0 #61427b33;
+  font-family: var(--vapor-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+html[data-theme="vaporwave"] :is(.primary-action, .email-button) {
+  background: #ffe7a2;
+}
+
+html[data-theme="vaporwave"] .secondary-action {
+  background: #f4c4df;
+}
+
+html[data-theme="vaporwave"] :is(.nav-button, .primary-action, .secondary-action, .quiet-action, .social-row :where(a), .pagination-button, .pagination-page, .icon-button, .email-button, .mobile-nav :where(button)):hover:not(:disabled) {
+  border-color: var(--vapor-purple);
+  background: #d4f3ef;
+  color: var(--ink);
+  transform: none;
+}
+
+html[data-theme="vaporwave"] :is(.nav-button, .primary-action, .secondary-action, .quiet-action, .social-row :where(a), .pagination-button, .pagination-page, .icon-button, .email-button, .mobile-nav :where(button)):active:not(:disabled),
+html[data-theme="vaporwave"] .pagination-page.active,
+html[data-theme="vaporwave"] .pagination-page.active:hover {
+  background: #d6c3eb;
+  color: var(--ink);
+  box-shadow: inset 2px 2px #987baa, inset -2px -2px #fff8f5;
+  transform: none;
+}
+
+html[data-theme="vaporwave"] .pagination-button:disabled {
+  background: #e4dae8;
+  color: #796c82;
+  box-shadow: inset 1px 1px #fff;
+  opacity: 1;
+}
+
+html[data-theme="vaporwave"] .contact-backdrop {
+  background: #37204b70;
+  backdrop-filter: blur(4px);
+}
+
+html[data-theme="vaporwave"] .contact-panel {
+  padding-top: 58px;
+}
+
+html[data-theme="vaporwave"] .contact-panel::before {
+  height: 38px;
+  padding-top: 11px;
+  content: "NEW_MESSAGE.EXE" / "";
+}
+
+html[data-theme="vaporwave"] .contact-panel .icon-button {
+  z-index: 3;
+  top: 5px;
+  right: 5px;
+  height: 32px;
+  width: 32px;
+  background: #f6b8d7;
+  font-size: 1.5rem;
+}
+
+html[data-theme="vaporwave"] .contact-waiting {
+  border-color: #a28bb2;
+  border-radius: 0;
+  background: #ece3f4;
+  box-shadow: inset 1px 1px #a28bb2, inset -1px -1px #fff;
+}
+
+html[data-theme="vaporwave"] :is(.hero-grid > *, .hero-stat, .about-grid > *, .metric, .skill-card, .experience-card > *, .project-body) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  html[data-theme="vaporwave"] .hero-band::before,
+  html[data-theme="vaporwave"] .hero-band::after {
+    right: 42px;
+    left: 42px;
+  }
+}
+
+/* Retain both desktop columns while allowing their contents to fit a tablet. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  html[data-theme="vaporwave"] .hero-band {
+    padding-inline: 20px;
+  }
+
+  html[data-theme="vaporwave"] .hero-band::before,
+  html[data-theme="vaporwave"] .hero-band::after {
+    right: 20px;
+    left: 20px;
+  }
+
+  html[data-theme="vaporwave"] .hero-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(196px, 0.62fr);
+    gap: 18px;
+  }
+
+  html[data-theme="vaporwave"] .about-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.55fr);
+  }
+
+  html[data-theme="vaporwave"] .hero-title {
+    font-size: clamp(2rem, 4.4vw, 3rem);
+  }
+
+  html[data-theme="vaporwave"] .hero-snapshot {
+    padding-inline: 12px;
+  }
+
+  html[data-theme="vaporwave"] .hero-snapshot h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  }
+
+  html[data-theme="vaporwave"] .hero-stat {
+    padding: 8px 4px;
+  }
+
+  html[data-theme="vaporwave"] .hero-statbar {
+    gap: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  html[data-theme="vaporwave"] .hero-band::before {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+
+  html[data-theme="vaporwave"] .hero-title {
+    font-size: clamp(2.7rem, 10.6vw, 5rem);
+    text-shadow: 2px 2px #fff8e9, 4px 4px #e89dcc;
+  }
+
+  html[data-theme="vaporwave"] .hero-band .section-kicker {
+    margin-top: 20px;
+  }
+
+  html[data-theme="vaporwave"] .mobile-nav button {
+    font-size: 0.65rem;
+  }
+
+  html[data-theme="vaporwave"] .mobile-role {
+    margin-top: 4px;
+  }
+
+  html[data-theme="vaporwave"] .hero-stat {
+    padding: 10px 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="vaporwave"] {
+    scroll-behavior: auto;
+  }
+
+  html[data-theme="vaporwave"] *,
+  html[data-theme="vaporwave"] *::before,
+  html[data-theme="vaporwave"] *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html[data-theme="vaporwave"] .favorite-card:hover img {
+    transform: none;
+  }
+}
