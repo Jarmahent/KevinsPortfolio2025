@@ -12,7 +12,7 @@ import FavoriteProjects from './components/sections/FavoriteProjects.vue';
 
 const showingContactMe = ref(false);
 
-const themeNames = ['studio', 'cybertron', 'classic', 'light', 'workbench', 'vaporwave', 'liquid-glass'] as const;
+const themeNames = ['studio', 'cybertron', 'classic', 'light', 'workbench', 'vaporwave', 'liquid-glass', 'dwarf-fortress'] as const;
 type ThemeName = (typeof themeNames)[number];
 
 function chooseRandomTheme(): ThemeName {
@@ -44,6 +44,10 @@ const socialIconColor = computed(() => {
 
   if (activeTheme.value === 'vaporwave') {
     return '#382053';
+  }
+
+  if (activeTheme.value === 'dwarf-fortress') {
+    return '#f4df61';
   }
 
   return '#f7f4ed';

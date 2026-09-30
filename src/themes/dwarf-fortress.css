@@ -1,0 +1,563 @@
+/* Character-built frames and map colors, scoped to the Dwarf Fortress theme. */
+html[data-theme="dwarf-fortress"] {
+  --ink: #e4e4dc;
+  --ink-soft: #aaa99e;
+  --paper: #f4f2de;
+  --paper-quiet: #bdbdb4;
+  --line: #777870;
+  --charcoal: #030403;
+  --charcoal-2: #10120e;
+  --mint: #56e857;
+  --coral: #ff5277;
+  --gold: #f7d832;
+  --sky: #779cfa;
+  --df-bg: #030403;
+  --df-panel: #0d0f0b;
+  --df-panel-raised: #151911;
+  --df-stone: #9b9d96;
+  --df-muted: #b7b9ac;
+  --df-gold: #f7d832;
+  --df-green: #69e551;
+  --df-red: #ff5277;
+  --df-blue: #83a7ff;
+  /* CP437-style terrain, stone, water, plants, and fortress marks. */
+  --df-map:
+    "  .  ,    ~~~  .   ^   ,  ▲▲    .  ☼  .   ≈≈≈  ,   +++    .   ░▒░  .    ♣   ^   .  ,  ~  \A "
+    "     ^  .  ~  ,    ^^  .  ░░  +    .    ≈≈≈≈  .   ▲  ▲  ,   :   .   +  .  ♣♣   .  \A "
+    "  ,  .   ^^^   ♦  .   ~~~   .   ▒▓▒   +++  .  ,    ≈≈   ^    .  ▲▲▲   ,  .   ~  \A "
+    "    ~  .  ,   ♣   .  ▲  ▲  ^    .  +  +   ░▒░▒   .   ~~~~  ,  .   ^^^  :    .  \A "
+    "  .   ,  ,   ~~~  .   ^^   ░  +++   .  ♣   .  ≈≈≈  ▒▒   ,  ▲▲   .  ╬  .   ~   \A "
+    "     .   ▲  .    ~  :   ,   +  +  +   .  ░▓░   ^^  .  ,   ♣♣  ~~~~   .  ^   .  \A "
+    "  ~~~   ,  .   ▲▲▲   .  ^  ^  :   ▒▒░  .  +++  .   ≈≈≈≈  .  ,    ♣  .   ~  ,  \A "
+    "  .   ~   .  ,  ♣♣   ^^   ,  .   ░▒▓▒░   +    .   ▲  ▲   ~~~   .  ☻  .   ^^^   \A "
+    "    ,   .  ++++   .   ≈≈≈  ▲▲   .  ,  ^   ▒░▒  .  ♣   ~~~~  ,   .  ▲   .  :  \A "
+    "  ^  .  ,  .   ░░░   +  +   .  ~~~   :   ▲▲▲   .   ♣♣  ^^   .  ≈≈≈  ,  .   +  \A "
+    "  .  ♣   ~~~~   .  ^^^   ,  ▒▓▒   .  +++  .  :   ▲  .  ≈≈≈≈  .  ,   ░░   .  \A "
+    "    ,   ▲▲   .   ~~~  :   +   .   ♣♣   ░▒░   ^^  .  ≈≈  ,  .   +++   .  ^  \A "
+    "  .   ^  ^   ,  .  ~~~~   ▲  .   ▒▒▓▒   +  .   ≈≈≈  ,   ♣   .  :  ░░  .   \A "
+    "  ~~~   .  ,  ♣♣  .   ▲▲▲   .  +++   ░▓░   ^^^   .  ,  ≈≈≈≈  .   +  :   .  \A "
+    "    .  ,  ^   ~~~   .   ▒░▒░  +  +   .  ▲  ▲  .   ♣♣♣   ,  .   ≈≈  ^^   .  \A "
+    "  ,   .  +++   ^^^   .   ≈≈≈≈  .  ░▒▓  .   ~~~~  ,  ▲▲  .   ♣   :   +  .  \A "
+    "  .   ▲  ▲  .  ,  ~~~  .  +   ▒▒▒   ^^  .   ♣♣   ≈≈≈  ,  .  ░░  .  ^   ~   \A "
+    "    ~~~~   ,  .   ░▓░  +++  .   ▲▲▲   ^  .  ♣   :   ≈≈≈≈  ,   ▒▒   .  +   \A ";
+  color-scheme: dark;
+}
+
+html[data-theme="dwarf-fortress"] body {
+  background-color: var(--df-bg);
+  background-image:
+    radial-gradient(circle at 9% 18%, #70c74c 0 1px, transparent 1.5px),
+    radial-gradient(circle at 71% 61%, #b6b8af 0 1px, transparent 1.5px),
+    radial-gradient(circle at 42% 83%, #e3bd32 0 1px, transparent 1.5px),
+    linear-gradient(#030403, #030403);
+  background-size: 113px 89px, 157px 131px, 191px 149px, auto;
+  color: var(--df-muted);
+  font-family: "Courier New", Courier, monospace;
+  -webkit-font-smoothing: none;
+}
+
+html[data-theme="dwarf-fortress"] :is(button, input, select, textarea) {
+  font-family: inherit;
+}
+
+html[data-theme="dwarf-fortress"] ::selection {
+  background: var(--df-gold);
+  color: #000;
+}
+
+html[data-theme="dwarf-fortress"] :focus-visible {
+  outline: 2px dashed var(--df-gold);
+  outline-offset: 3px;
+}
+
+html[data-theme="dwarf-fortress"] :is(.desktop-rail, .mobile-topbar, .mobile-nav, .theme-switcher, .contact-panel) {
+  border-radius: 0;
+  background: var(--df-panel);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+html[data-theme="dwarf-fortress"] .desktop-rail {
+  border-right: 5px double var(--df-stone);
+  background-image: repeating-linear-gradient(180deg, transparent 0 18px, #17201a 18px 19px);
+  box-shadow: inset -8px 0 0 #070907;
+}
+
+html[data-theme="dwarf-fortress"] .desktop-rail::before {
+  content: "+ + + + + + + + + + + + + + + + + + + +";
+  position: absolute;
+  inset: 0 6px auto 6px;
+  overflow: hidden;
+  color: var(--df-gold);
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+html[data-theme="dwarf-fortress"] :is(.rail-photo, .mobile-brand img) {
+  border: 3px double var(--df-stone);
+  border-radius: 0;
+  filter: grayscale(1) contrast(1.3);
+  image-rendering: pixelated;
+}
+
+html[data-theme="dwarf-fortress"] :is(.rail-name, .mobile-name) {
+  color: var(--df-gold);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 #6f5b08;
+}
+
+html[data-theme="dwarf-fortress"] :is(.rail-meta, .mobile-role, .nav-index) {
+  color: var(--df-stone);
+}
+
+html[data-theme="dwarf-fortress"] .availability-pill {
+  border: 2px dashed var(--df-green);
+  border-radius: 0;
+  background: #0b1a09;
+  color: var(--df-green);
+  letter-spacing: 0;
+}
+
+html[data-theme="dwarf-fortress"] .availability-pill::before {
+  content: "[";
+}
+
+html[data-theme="dwarf-fortress"] .availability-pill::after {
+  content: "]";
+}
+
+html[data-theme="dwarf-fortress"] .availability-dot {
+  border-radius: 0;
+  background: var(--df-green);
+  box-shadow: none;
+}
+
+html[data-theme="dwarf-fortress"] .nav-stack {
+  gap: 3px;
+}
+
+html[data-theme="dwarf-fortress"] .nav-button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--df-muted);
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: none;
+}
+
+html[data-theme="dwarf-fortress"] .nav-button::before {
+  content: ">";
+  margin-right: 8px;
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .nav-button:hover {
+  border-color: var(--df-stone);
+  background: var(--df-gold);
+  color: #000;
+  transform: none;
+}
+
+html[data-theme="dwarf-fortress"] .nav-button:hover::before,
+html[data-theme="dwarf-fortress"] .nav-button:hover .nav-index {
+  color: #000;
+}
+
+html[data-theme="dwarf-fortress"] .mobile-topbar {
+  border-bottom: 4px double var(--df-stone);
+}
+
+html[data-theme="dwarf-fortress"] .mobile-nav {
+  border: 3px double var(--df-stone);
+  background: #080a07;
+}
+
+html[data-theme="dwarf-fortress"] .mobile-nav button {
+  border-radius: 0;
+  color: var(--df-gold);
+  font-weight: 800;
+}
+
+html[data-theme="dwarf-fortress"] .mobile-nav button:hover {
+  background: var(--df-gold);
+  color: #000;
+}
+
+html[data-theme="dwarf-fortress"] .main-canvas {
+  background: transparent;
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-band, .section-band) {
+  position: relative;
+  isolation: isolate;
+  border-bottom: 4px double var(--df-stone);
+  background-color: #050605;
+  color: var(--df-muted);
+}
+
+html[data-theme="dwarf-fortress"] :is(.section-band.light, .section-band.dark) {
+  background-color: #050605;
+  color: var(--df-muted);
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-band, .section-band) > .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-band, .section-band)::after {
+  content: "+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+";
+  position: absolute;
+  inset: auto 0 0;
+  overflow: hidden;
+  color: var(--df-gold);
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+html[data-theme="dwarf-fortress"] .hero-band {
+  background-image:
+    linear-gradient(90deg, transparent 0 68%, #11170d 68% 68.2%, transparent 68.2%),
+    repeating-linear-gradient(0deg, transparent 0 28px, #0c120c 28px 29px, transparent 29px 54px),
+    radial-gradient(circle at 87% 12%, #322908, transparent 36%);
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-band, .section-band)::before {
+  content: var(--df-map) var(--df-map) var(--df-map) var(--df-map) var(--df-map) var(--df-map);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-image: linear-gradient(105deg, #71e344 0 24%, #d5d8cf 32% 42%, #f7d832 50% 67%, #83a7ff 76% 88%, #ff5277 96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.34;
+  white-space: pre;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 19px;
+  letter-spacing: 5px;
+  pointer-events: none;
+}
+
+html[data-theme="dwarf-fortress"] :is(#about-me, #experience, #favorite-projects)::before {
+  transform: scaleX(-1);
+}
+
+html[data-theme="dwarf-fortress"] #skills::before {
+  letter-spacing: 7px;
+}
+
+html[data-theme="dwarf-fortress"] #projects::before {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+html[data-theme="dwarf-fortress"] #skills {
+  background-image: repeating-linear-gradient(90deg, transparent 0 47px, #0b130b 47px 48px);
+}
+
+html[data-theme="dwarf-fortress"] #projects {
+  background-image: repeating-linear-gradient(90deg, transparent 0 64px, #141009 64px 65px);
+}
+
+html[data-theme="dwarf-fortress"] #favorite-projects {
+  background-image: repeating-linear-gradient(90deg, transparent 0 70px, #0b1020 70px 71px);
+}
+
+html[data-theme="dwarf-fortress"] :is(.section-kicker, .snapshot-kicker, .experience-time) {
+  color: var(--df-green);
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+html[data-theme="dwarf-fortress"] :is(.section-kicker, .snapshot-kicker)::before {
+  content: "[ ";
+  color: var(--df-stone);
+}
+
+html[data-theme="dwarf-fortress"] :is(.section-kicker, .snapshot-kicker)::after {
+  content: " ]";
+  color: var(--df-stone);
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-title, .section-title) {
+  color: var(--df-gold);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  line-height: 1.02;
+  text-shadow: 3px 3px 0 #695914;
+  overflow-wrap: anywhere;
+}
+
+html[data-theme="dwarf-fortress"] .hero-title {
+  font-size: clamp(2.6rem, 7.3vw, 6.1rem);
+}
+
+html[data-theme="dwarf-fortress"] .section-title {
+  font-size: clamp(2rem, 4.4vw, 4rem);
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-subtitle, .section-copy, .dark .section-copy, .about-copy, .about-focus p, .skill-card p, .experience-card p, .project-card p, .contact-copy) {
+  color: var(--df-muted);
+}
+
+html[data-theme="dwarf-fortress"] .hero-subtitle {
+  max-width: 61ch;
+}
+
+html[data-theme="dwarf-fortress"] :is(.tag, .small-tag, .project-card .project-note) {
+  border: 1px dashed var(--df-stone);
+  border-radius: 0;
+  background: #11160d;
+  color: var(--df-green);
+  font-weight: 800;
+  box-shadow: none;
+}
+
+html[data-theme="dwarf-fortress"] .tag:nth-child(2n),
+html[data-theme="dwarf-fortress"] .small-tag:nth-child(2n) {
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-card, .about-focus > div, .metric, .skill-card, .experience-card, .project-card, .favorite-card, .contact-panel) {
+  border: 4px double var(--df-stone);
+  border-radius: 0;
+  background-color: var(--df-panel);
+  box-shadow: 5px 5px 0 #0c0e0b, 7px 7px 0 #565950;
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-card, .about-focus > div, .metric, .skill-card, .experience-card, .project-card, .favorite-card, .contact-panel)::before {
+  content: "+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+==+";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+  color: var(--df-gold);
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+html[data-theme="dwarf-fortress"] :is(.about-focus > div, .metric, .skill-card, .experience-card, .contact-panel) {
+  position: relative;
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-card, .skill-card, .experience-card, .project-card, .contact-panel) {
+  background-image: repeating-linear-gradient(0deg, transparent 0 20px, #121810 20px 21px);
+}
+
+html[data-theme="dwarf-fortress"] .hero-card {
+  background-color: #0b0c08;
+}
+
+html[data-theme="dwarf-fortress"] .hero-snapshot h2 {
+  color: var(--df-gold);
+  font-size: clamp(1.7rem, 3.1vw, 2.8rem);
+  line-height: 1.08;
+}
+
+html[data-theme="dwarf-fortress"] .hero-snapshot p:not(.snapshot-kicker),
+html[data-theme="dwarf-fortress"] :is(.hero-stat span, .metric span) {
+  color: var(--df-muted);
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-stat, .metric) {
+  border: 2px solid var(--df-stone);
+  border-radius: 0;
+  background: #191c15;
+  box-shadow: inset 0 0 0 2px #090a08;
+  backdrop-filter: none;
+}
+
+html[data-theme="dwarf-fortress"] :is(.hero-stat strong, .metric strong) {
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .metric:nth-child(2) strong {
+  color: var(--df-green);
+}
+
+html[data-theme="dwarf-fortress"] .metric:nth-child(3) strong {
+  color: var(--df-blue);
+}
+
+html[data-theme="dwarf-fortress"] .about-focus span {
+  color: var(--df-red);
+  font-size: 0.9rem;
+}
+
+html[data-theme="dwarf-fortress"] :is(.about-focus strong, .skill-card h3, .experience-card h3, .project-card h3) {
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .skill-icon,
+html[data-theme="dwarf-fortress"] .skill-card:nth-child(n) .skill-icon {
+  border: 2px solid var(--df-stone);
+  border-radius: 0;
+  background: #1b2711;
+  color: var(--df-green);
+  box-shadow: inset 0 0 0 2px #050605;
+}
+
+html[data-theme="dwarf-fortress"] .skill-card:nth-child(4n + 2) .skill-icon {
+  background: #162032;
+  color: var(--df-blue);
+}
+
+html[data-theme="dwarf-fortress"] .skill-card:nth-child(4n + 3) .skill-icon {
+  background: #301522;
+  color: var(--df-red);
+}
+
+html[data-theme="dwarf-fortress"] .skill-card:nth-child(4n) .skill-icon {
+  background: #302710;
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .experience-time {
+  color: var(--df-green);
+}
+
+html[data-theme="dwarf-fortress"] :is(.experience-card, .project-card) a:hover {
+  color: var(--df-green);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+html[data-theme="dwarf-fortress"] .project-media {
+  border-bottom: 4px double var(--df-stone);
+  background: #080908;
+}
+
+html[data-theme="dwarf-fortress"] .project-body {
+  border-top: 1px dashed var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .favorite-card::after {
+  background: linear-gradient(180deg, #0000 4%, #030403bb 45%, #030403f5 100%);
+}
+
+html[data-theme="dwarf-fortress"] .favorite-card img {
+  filter: saturate(0.7) contrast(1.15);
+}
+
+html[data-theme="dwarf-fortress"] :is(.favorite-card h3, .favorite-card p) {
+  color: #fffbe5;
+  text-shadow: 2px 2px 0 #000;
+}
+
+html[data-theme="dwarf-fortress"] .favorite-card h3 {
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] :is(.primary-action, .secondary-action, .quiet-action, .social-row a, .pagination-button, .pagination-page, .icon-button, .email-button) {
+  border: 2px solid var(--df-stone);
+  border-radius: 0;
+  background: #11140e;
+  color: var(--df-gold);
+  box-shadow: inset 0 0 0 2px #050605;
+  font-weight: 900;
+  transition: none;
+}
+
+html[data-theme="dwarf-fortress"] :is(.primary-action, .email-button) {
+  border-color: var(--df-gold);
+  background: var(--df-gold);
+  color: #070704;
+}
+
+html[data-theme="dwarf-fortress"] :is(.primary-action, .secondary-action, .quiet-action, .social-row a, .pagination-button, .pagination-page, .icon-button, .email-button):hover:not(:disabled) {
+  border-color: var(--df-green);
+  background: var(--df-green);
+  color: #050605;
+  transform: none;
+}
+
+html[data-theme="dwarf-fortress"] .pagination-page.active {
+  border-color: var(--df-gold);
+  background: var(--df-gold);
+  color: #050605;
+}
+
+html[data-theme="dwarf-fortress"] .contact-backdrop {
+  background: #000c;
+  backdrop-filter: none;
+}
+
+html[data-theme="dwarf-fortress"] .contact-panel {
+  color: var(--df-muted);
+}
+
+html[data-theme="dwarf-fortress"] .contact-panel h2 {
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .contact-waiting {
+  border: 2px dashed var(--df-stone);
+  border-radius: 0;
+  background: var(--df-panel-raised);
+}
+
+html[data-theme="dwarf-fortress"] .theme-switcher {
+  border: 2px solid var(--df-stone);
+  color: var(--df-gold);
+}
+
+html[data-theme="dwarf-fortress"] .theme-switcher select {
+  border: 1px solid var(--df-stone);
+  border-radius: 0;
+  background: #050605;
+  color: var(--df-gold);
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  html[data-theme="dwarf-fortress"] .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  html[data-theme="dwarf-fortress"] :is(.hero-band, .section-band)::before {
+    opacity: 0.24;
+  }
+
+  html[data-theme="dwarf-fortress"] .hero-title {
+    font-size: clamp(2.45rem, 10.7vw, 4rem);
+  }
+
+  html[data-theme="dwarf-fortress"] .hero-statbar {
+    margin: 12px 0 0;
+  }
+
+  html[data-theme="dwarf-fortress"] .hero-stat {
+    padding: 8px;
+  }
+
+  html[data-theme="dwarf-fortress"] .mobile-nav {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    gap: 2px;
+    padding: 5px;
+  }
+
+  html[data-theme="dwarf-fortress"] .mobile-nav button {
+    padding: 8px 1px;
+    font-size: 0.65rem;
+  }
+}
