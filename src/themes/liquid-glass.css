@@ -1,0 +1,371 @@
+/* Liquid glass: surface styles only; the shared layout stays in style.css. */
+html[data-theme="liquid-glass"] {
+  color-scheme: dark;
+  --ink: #f4faff;
+  --ink-soft: #d5e5f3;
+  --paper: #f4faff;
+  --paper-quiet: #d5e5f3;
+  --line: rgba(222, 244, 255, 0.26);
+  --mint: #89f4d8;
+  --coral: #b6efff;
+  --gold: #a2dcff;
+  --sky: #b6efff;
+  --glass-muted: #c4d7e9;
+  --glass-surface: rgba(29, 62, 105, 0.42);
+  --glass-chrome: rgba(13, 36, 65, 0.62);
+  --glass-control: rgba(225, 246, 255, 0.09);
+  --glass-shadow:
+    0 16px 44px rgba(3, 15, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    inset 1px 0 0 rgba(225, 251, 255, 0.12),
+    inset 0 -1px 0 rgba(193, 224, 255, 0.1);
+}
+
+html[data-theme="liquid-glass"] body {
+  background-color: #081a35;
+  background-image:
+    radial-gradient(ellipse at 8% 8%, rgba(83, 191, 197, 0.5), transparent 44%),
+    radial-gradient(ellipse at 96% 14%, rgba(95, 121, 236, 0.48), transparent 48%),
+    radial-gradient(ellipse at 65% 100%, rgba(0, 134, 186, 0.5), transparent 56%),
+    radial-gradient(ellipse at -16% 108%, transparent 45%, rgba(117, 245, 231, 0.13) 45.2%, rgba(53, 192, 202, 0.24) 59%, rgba(189, 255, 251, 0.36) 59.15%, transparent 59.4%),
+    radial-gradient(ellipse at 110% -18%, #154986 24%, #1b4383 42%, rgba(125, 176, 255, 0.35) 42.15%, transparent 42.45%),
+    linear-gradient(145deg, #102e45, #123b7b 54%, #071a39);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-theme="liquid-glass"] ::selection {
+  background: #b6efff;
+  color: #102b4c;
+}
+
+html[data-theme="liquid-glass"] :focus-visible {
+  outline: 2px solid #c1f4ff;
+  outline-offset: 4px;
+}
+
+html[data-theme="liquid-glass"] :is(.desktop-rail, .mobile-topbar, .mobile-nav) {
+  border-color: rgba(230, 248, 255, 0.24);
+  background: linear-gradient(135deg, rgba(222, 250, 255, 0.12), transparent 55%), var(--glass-chrome);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(28px) saturate(155%);
+  backdrop-filter: blur(28px) saturate(155%);
+}
+
+html[data-theme="liquid-glass"] .mobile-nav {
+  border-radius: 999px;
+}
+
+html[data-theme="liquid-glass"] :is(.rail-photo, .mobile-brand img) {
+  border-color: rgba(238, 253, 255, 0.65);
+  box-shadow: 0 8px 24px rgba(2, 18, 42, 0.2), 0 0 0 4px rgba(220, 246, 255, 0.08);
+}
+
+html[data-theme="liquid-glass"] :is(.rail-name, .mobile-name) {
+  color: var(--ink);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+html[data-theme="liquid-glass"] :is(.rail-meta, .mobile-role, .nav-index) {
+  color: var(--glass-muted);
+}
+
+html[data-theme="liquid-glass"] .availability-pill {
+  border-color: rgba(163, 255, 224, 0.28);
+  background: rgba(53, 159, 135, 0.14);
+  color: #c7ffec;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: inset 0 1px 0 rgba(224, 255, 247, 0.15);
+}
+
+html[data-theme="liquid-glass"] .availability-dot {
+  background: var(--mint);
+  box-shadow: 0 0 0 4px rgba(137, 244, 216, 0.1), 0 0 12px rgba(137, 244, 216, 0.45);
+}
+
+html[data-theme="liquid-glass"] :is(.nav-button, .mobile-nav button) {
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-weight: 550;
+}
+
+html[data-theme="liquid-glass"] :is(.nav-button, .mobile-nav button):hover {
+  border-color: rgba(240, 253, 255, 0.28);
+  background: rgba(222, 245, 255, 0.14);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  transform: none;
+}
+
+html[data-theme="liquid-glass"] :is(.hero-band, .section-band) {
+  border-color: rgba(213, 244, 255, 0.14);
+}
+
+html[data-theme="liquid-glass"] :is(.section-band.light, .section-band.dark) {
+  background: transparent;
+  color: var(--ink);
+}
+
+html[data-theme="liquid-glass"] :is(.hero-title, .section-title) {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  text-shadow: 0 3px 24px rgba(5, 24, 59, 0.12);
+}
+
+html[data-theme="liquid-glass"] .hero-title {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1.02;
+}
+
+html[data-theme="liquid-glass"] .section-title {
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  line-height: 1.06;
+}
+
+html[data-theme="liquid-glass"] :is(.section-kicker, .snapshot-kicker) {
+  color: #b6efff;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+}
+
+html[data-theme="liquid-glass"] :is(.hero-subtitle, .section-copy, .about-copy, .about-focus p, .skill-card p, .experience-card p, .project-card p, .contact-copy),
+html[data-theme="liquid-glass"] .dark .section-copy,
+html[data-theme="liquid-glass"] .hero-snapshot p:not(.snapshot-kicker) {
+  color: var(--ink-soft);
+}
+
+/* Translucent surfaces and inset highlights give the existing cards depth. */
+html[data-theme="liquid-glass"] :is(.hero-card, .about-focus > :where(div), .metric, .skill-card, .experience-card, .project-card, .contact-panel) {
+  border-color: var(--line);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(235, 253, 255, 0.16), rgba(231, 247, 255, 0.025) 48%, rgba(198, 218, 255, 0.08)),
+    var(--glass-surface);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+
+html[data-theme="liquid-glass"] .hero-card {
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse at 0 0, rgba(209, 255, 253, 0.24), transparent 65%),
+    linear-gradient(135deg, rgba(225, 245, 255, 0.12), transparent 50%, rgba(170, 194, 255, 0.13)),
+    var(--glass-surface);
+  box-shadow: var(--glass-shadow), 0 28px 70px rgba(4, 20, 55, 0.24);
+}
+
+html[data-theme="liquid-glass"] .hero-card::before {
+  position: absolute;
+  inset: 0 12% auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+  content: "";
+  pointer-events: none;
+}
+
+html[data-theme="liquid-glass"] :is(.hero-snapshot h2, .about-focus strong, .metric strong, .skill-card h3, .experience-card h3, .project-card h3) {
+  color: var(--ink);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+html[data-theme="liquid-glass"] .hero-snapshot h2 {
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  line-height: 1.08;
+}
+
+html[data-theme="liquid-glass"] :is(.hero-snapshot > *, .hero-stat) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+html[data-theme="liquid-glass"] .about-focus span {
+  color: #b6efff;
+}
+
+html[data-theme="liquid-glass"] :is(.hero-stat, .tag, .small-tag, .project-card .project-note, .contact-waiting) {
+  border-color: rgba(222, 245, 255, 0.24);
+  background: linear-gradient(135deg, rgba(243, 254, 255, 0.07), transparent), var(--glass-control);
+  color: var(--ink-soft);
+  box-shadow: inset 0 1px 0 rgba(247, 254, 255, 0.2);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+html[data-theme="liquid-glass"] :is(.hero-stat, .metric, .contact-waiting) {
+  border-radius: 18px;
+}
+
+html[data-theme="liquid-glass"] .hero-stat strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+html[data-theme="liquid-glass"] :is(.hero-stat span, .metric span) {
+  color: var(--glass-muted);
+  font-weight: 550;
+}
+
+html[data-theme="liquid-glass"] :is(.tag, .small-tag, .project-card .project-note) {
+  font-weight: 550;
+}
+
+html[data-theme="liquid-glass"] .skill-card .skill-icon {
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(217, 252, 255, 0.25), rgba(190, 232, 255, 0.06));
+  color: #e6fbff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), inset 0 0 0 1px rgba(218, 245, 255, 0.22), 0 5px 14px rgba(6, 22, 53, 0.14);
+}
+
+html[data-theme="liquid-glass"] .skill-icon span {
+  font-weight: 600;
+}
+
+html[data-theme="liquid-glass"] .experience-card .experience-time {
+  color: #b7d5ef;
+  font-weight: 600;
+}
+
+html[data-theme="liquid-glass"] :is(.experience-card, .project-card) a:hover {
+  color: #b6efff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+html[data-theme="liquid-glass"] :is(.experience-card, .project-card, .social-row) a svg {
+  fill: currentColor;
+}
+
+html[data-theme="liquid-glass"] .project-media {
+  background: rgba(11, 31, 61, 0.45);
+}
+
+html[data-theme="liquid-glass"] .favorite-card {
+  border-color: rgba(230, 248, 255, 0.35);
+  border-radius: 26px;
+  box-shadow: var(--glass-shadow);
+}
+
+html[data-theme="liquid-glass"] .favorite-card::after {
+  background: linear-gradient(180deg, rgba(9, 27, 54, 0.06), rgba(8, 25, 51, 0.82) 65%, rgba(8, 25, 51, 0.96));
+}
+
+html[data-theme="liquid-glass"] .favorite-content {
+  background: linear-gradient(180deg, rgba(31, 64, 98, 0.22), rgba(23, 50, 81, 0.54));
+  border-radius: 22px 22px 0 0;
+  box-shadow: inset 0 1px 0 rgba(235, 251, 255, 0.22);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
+}
+
+html[data-theme="liquid-glass"] .favorite-card h3 {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+html[data-theme="liquid-glass"] .favorite-card p {
+  color: #d5e5f3;
+}
+
+html[data-theme="liquid-glass"] :is(.primary-action, .secondary-action, .quiet-action, .social-row :where(a), .pagination-button, .pagination-page, .icon-button, .email-button) {
+  border-color: rgba(229, 249, 255, 0.32);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(236, 251, 255, 0.16), rgba(228, 245, 255, 0.035)), var(--glass-control);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 4px 14px rgba(3, 19, 48, 0.12);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+html[data-theme="liquid-glass"] :is(.primary-action, .email-button, .pagination-page.active) {
+  border-color: rgba(211, 242, 255, 0.8);
+  background: linear-gradient(145deg, #d5f5ff, #a4d7ff);
+  color: #113958;
+  box-shadow: inset 0 1px 0 #f0fdff, 0 5px 22px rgba(75, 161, 255, 0.2);
+}
+
+html[data-theme="liquid-glass"] :is(.secondary-action, .quiet-action, .social-row :where(a), .pagination-button, .pagination-page, .icon-button):hover:not(:disabled) {
+  border-color: rgba(243, 254, 255, 0.65);
+  background: rgba(220, 245, 255, 0.22);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 6px 22px rgba(6, 23, 54, 0.16);
+  transform: none;
+}
+
+html[data-theme="liquid-glass"] :is(.primary-action, .email-button, .pagination-page.active):hover {
+  border-color: #effcff;
+  background: linear-gradient(145deg, #e6faff, #bee5ff);
+  color: #113958;
+  transform: none;
+}
+
+html[data-theme="liquid-glass"] .pagination-button:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+}
+
+html[data-theme="liquid-glass"] .contact-backdrop {
+  background: rgba(4, 17, 37, 0.55);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+html[data-theme="liquid-glass"] .contact-panel {
+  --glass-surface: rgba(28, 59, 96, 0.88);
+  color: var(--ink);
+}
+
+/* Tinted surfaces keep text readable when backdrop filtering is unavailable. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  html[data-theme="liquid-glass"] {
+    --glass-surface: #24476f;
+    --glass-chrome: #183653;
+    --glass-control: #345677;
+  }
+
+  html[data-theme="liquid-glass"] .contact-panel {
+    --glass-surface: #24476f;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html[data-theme="liquid-glass"] {
+    --glass-surface: #24476f;
+    --glass-chrome: #183653;
+    --glass-control: #345677;
+  }
+
+  html[data-theme="liquid-glass"] .contact-panel {
+    --glass-surface: #24476f;
+  }
+
+  html[data-theme="liquid-glass"] .favorite-content {
+    background: #183653;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="liquid-glass"] {
+    scroll-behavior: auto;
+  }
+
+  html[data-theme="liquid-glass"] *,
+  html[data-theme="liquid-glass"] *::before,
+  html[data-theme="liquid-glass"] *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html[data-theme="liquid-glass"] .favorite-card:hover img {
+    transform: none;
+  }
+}
