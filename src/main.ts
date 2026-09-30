@@ -6,6 +6,7 @@ import './themes/light.css'
 import './theme-switcher.css'
 import './themes/workbench.css'
 import './themes/dwarf-fortress.css'
+import './themes/windows-8.css'
 import App from './App.vue'
 
 createApp(App).mount('#app')
