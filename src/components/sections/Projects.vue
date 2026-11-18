@@ -91,7 +91,7 @@
 
         <article class="project-card rogue-invader-card">
           <div class="project-media">
-            <img src="../../assets/projects/rogue-invader.webp" alt="Rogue Invader artwork with a spaceship firing at asteroids">
+            <img src="../../assets/projects/rogue-invader.png" alt="Rogue Invader artwork with a spaceship firing at asteroids">
           </div>
           <div class="project-body">
             <h3>
